@@ -1,0 +1,161 @@
+/** section4 **/
+.section4-wrap {
+    background-color: white;
+    background-image: url(/img/online-gallery-bg.png);
+    background-position: center left;
+    background-repeat: no-repeat;
+    animation-name: online-gallery-bg;
+    animation-duration: 200s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    /* animation-iteration-count: infinite;*/
+}
+
+@keyframes online-gallery-bg {
+    from {
+        background-position: center left;
+    }
+
+    to {
+        background-position: center right;
+    }
+}
+
+.section4 {
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.title-section4 {
+    padding: 143px 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    float: right;
+}
+
+.h3-sup {
+    display: block;
+    font-size: 14px;
+    color: #5E4FB1;
+    font-weight: 700;
+}
+
+.h3-tit {
+    display: block;
+    font-size: 26px;
+    color: #333;
+    font-weight: 700;
+}
+
+.h3-comment {
+    display: block;
+    font-size: 16px;
+    color: #333;
+}
+
+.title-section4 .btn {
+    display: inline-block;
+    font-size: 16px;
+    color: #000;
+    padding: 5px 20px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.title-section4 .btn.mt {
+    margin-top: 30px;
+}
+
+/* //section4 */
+@media all and (max-width:1400px) {
+        /** section4 **/
+        .section4-wrap {
+            /*
+            background-color: #F0F2F5;
+            background-image: url(/img/main/online-gallery-bg.png);
+            background-position: center left;
+            background-repeat: no-repeat;
+            animation-name: online-gallery-bg;
+            animation-duration: 60s;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+    */
+            padding: 0 20px;
+        }
+    
+        @keyframes online-gallery-bg {
+            from {
+                background-position: center left;
+            }
+    
+            to {
+                background-position: center right;
+            }
+        }
+    
+        .title-section4 {
+            padding: 80px 50px;
+        }
+    
+        /** //section4 **/
+
+        
+}
+
+@media (max-width: 1200px) {
+        /** section4 **/
+        .section4 {}
+
+        .title-section4 {
+            padding: 60px 30px;
+        }
+    
+        .h3-comment {
+            max-width: 250px;
+        }
+    
+        /** //section4 **/
+
+}
+
+@media all and (max-width:900px) {
+        /** section4 **/
+        .title-section4 {
+            padding: 30px 30px;
+        }
+    
+        .h3-tit {
+            margin-bottom: 20px;
+        }
+    
+        .h4-tit {
+            font-size: 22px;
+        }
+    
+        /** //section4 **/
+}
+
+@media all and (max-width:600px) {
+        /** section4 **/
+        .section4-wrap {
+            padding: 20px;
+        }
+    
+        .section4 {}
+    
+        .title-section4 {
+            width: 100%;
+        }
+    
+        .title-section4 .btn {
+            font-size: 14px;
+        }
+    
+        /** //section4 **/
+}
+

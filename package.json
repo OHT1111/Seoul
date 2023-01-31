@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "gh-pages": "^5.0.0",
+    "homepage": "http://OHT1111.github.io/Seoul/index.html"
+
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  }
+}
