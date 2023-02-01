@@ -1,0 +1,4353 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 슬라이드 이미지 링크 -->
+        <link href="/css/section_04.css"  rel="stylesheet" type="text/css">
+    <!-- 슬라이드 이미지 링크-->
+
+         <!-- 링크 걸어서 들고오는 방식 -->
+         <script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+         crossorigin="anonymous"></script>
+
+    <!-- pc 엘엔비 -->
+    <script>
+        $(function(){
+            $(".pc_btn_menu").mouseover(function(){
+              $('.pc_list_menu').stop().slideDown(300);
+            })
+            $(".pc_list_menu").mouseover(function(){
+              $('.pc_list_menu').stop().slideDown(300);
+            })
+
+            $('.pc_list_menu_box').mouseout(function(){
+            $('.pc_list_menu').stop().slideUp(300);
+            })
+
+            //$('.pc_btn_menu').hover(function() {
+            //   $('.pc_list_menu').stop().slideToggle(300); 
+            //   document.querySelector('.pc_list_menu').style.display = 'block'
+            //   //슬라이드 토글
+            //})
+
+        })
+     </script>
+
+    <!-- 구글 폰트 링크 : 노토산스 -->
+    <link href="https://fonts.googleapis.com/
+    css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/> 
+
+    <!-- lnb버튼 -->
+    <link rel="stylesheet" href="./plugin/jquery-ui-1.13.2.custom/jquery-ui.theme.min copy.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    $( function() {
+      $( "#menu" ).menu();
+    } );
+    </script>
+
+</head>
+
+<!-- 헤드 밑에다가 스크립트 제이쿼리 장착 -->
+<script src="js/banner_slide_1122_ys_copy.js"></script>
+
+
+<style>
+    *{
+        margin: 0; padding: 0;
+        font-family: 'Noto Sans KR', sans-serif;
+    }
+    li{list-style: none;}
+    a{text-decoration: none;
+      color: #353535;}
+
+    .header{
+        width: 100%; height: 632px;
+        background-image: url(./img/main_bg.png);
+    }
+
+    /*pc버전 숨김처리*/
+    .pc_gnb{display: none;}
+    .pc_lnb{display: none;}
+    .pc_visual_main_box{display: none;}
+    .banner_box{display: none;}
+    .pc_ctns_box{display: none;}
+    .pc_cnts_main{display: none;}
+    .art_deal_box_table_pc{display: none;}
+    .con .name p{display: none;}
+    .con .name img{display: none;}
+    .section4-wrap{display: none;}
+
+    /*태블릿버전 푸터 sns아이콘*/
+    .ft_box .ft_box1 .tablet_ft_sns{display: none;}
+
+    /*pc버전 콘텐츠1번*/
+    .wrap .pc_con1_box{display: none;}
+
+    /*pc유튜브 제거*/
+    .pc_youtube_box{display: none;}
+
+    /*pc공지사항 제거*/
+    .pc_notice_box{display: none;}
+
+    /*pc 컨텐츠2번칸 제거*/
+    .pc_con2_box{display: none;}
+
+    /*pc 푸터 제거*/
+    .pc_footer{display: none;}
+
+    .header .lnb{
+        display: flex;
+        width: 100%; height: 10%;
+        padding-top: 3%;
+    }
+
+    .header .lnb .logo{
+        width: 75%;
+        margin-left: 4%;
+    }
+    .header .lnb .logos{display: none;}
+
+    .header .lnb .eng{
+        width: 25%;
+        margin-right: 3%;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .header .lnb .ctgry{
+        width: 0%;
+        margin: 10px 0;
+    }
+
+    .join_box .join a{
+        color: white;
+    }
+    
+    /*비주얼메인*/
+    body,
+    .visual_main_box {
+      position: relative;
+      height: 100%;
+    }
+
+    .header .visual_main_box {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .header .visualSwiper {
+      display: block;
+      width: 333px;
+      height: 476px;
+    }
+
+    .header .visual_contents .visual_slide {
+      /* Center slide text vertically */
+      display: block;
+      margin: 0;
+
+    }
+
+    .header .visual_contents .visual_slide img {
+      width: 333px;
+      height: 476px;
+      object-fit: cover;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev{
+        color: white;
+    }
+
+    .visual_name{
+        color: white;
+        font-weight: bold;
+        opacity: 0.75;
+    }
+    /*비주얼메인 끝*/
+
+    .icon_box{
+        width: 100%; height: 180px;
+        /* 팀플 기본색상은 #353535인데, 개인적으로 
+        색상이 좀 진한감이 있다고 생각이 되어 백그라운드 컬러에 불투명도를 주었다.*/
+        background-color: #353535;
+        opacity: 0.9;
+        text-align: center;
+    }
+
+    .icon_box .icon {
+        width: 33%; height: 50%;
+        float: left;
+        text-align: center;
+        font-size: 13.5px;
+        color: rgb(238, 238, 238);
+        
+        /* 말줄임 적용 */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        /*-----------*/ 
+    } 
+    .icon_box .icon .icon_img{
+        width: 42px; height: 41px;
+        opacity: 0.9;
+        margin: 0 37px;
+        margin-top: 11px;
+        margin-bottom: 5px;
+    }
+    /*아이콘 끝*/
+
+    /*-- 컨텐츠 부분 시작 --*/
+    
+    /*제목부분 .con .name으로 통합 적용*/
+    .wrap .con .name{
+        width: 100%; height: 50px;
+        line-height: 50px;
+        margin-top: 10px;
+        margin-left: 16px;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    /*컨텐츠 카테고리 통합*/
+    .ctgry_con1{
+        background-color: red;
+        color: white;
+        border-radius: 10px;font-size: 14px;
+        padding: 1px 5px;
+        margin: 5px 0;
+    }
+
+    .cnts_name{
+        margin: 2px 2px;
+        font-weight: bold;
+    }
+    .cnts_names{
+        margin-left: 10px;
+    }
+
+    .date{
+        margin: 0 2px;
+        border-left: 10px;
+    }
+    .dates{
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+
+    /**/
+    
+    /*con1 컨텐츠1번 - 오늘의 공연, 전시*/
+    /*con1 배경*/
+    .wrap .con1{
+        width: 100%;
+    }
+    .wrap .con1 .ctns_box{
+        width: 80%; height: 70%;
+        border: 1px solid black;
+    }
+    .wrap .con1 .cnts_box .cnts_boxing {
+        width: 94%; height: 34%;
+        margin: 0 3%;
+        margin-top: 4%;
+        float: left;
+    }
+
+    /*포스터있는 곳 박스처리*/
+    .wrap .con1 .cnts_box .cnts{
+        display: block;
+        float: left;
+        width: 48%; height: 34%;
+        border-radius: 5px;
+        box-shadow:2px 2px 2px #adadad;
+        padding-bottom: 1%;
+        
+    }
+
+    /*마진 맞추기*/
+    .wrap .con1 .cnts_box .cnts:nth-child(1),
+    .wrap .con1 .cnts_box .cnts:nth-child(3){
+        margin-right: 2.7%;
+
+    }
+
+    /*컨텐츠 채우기*/
+    .wrap .con1 .cnts_box .cnts img{
+        width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+        border-radius: 5px 5px 0 0;
+    }
+
+    /*오늘의 전시 더보기 버튼*/
+    .con1 .con1_btn_box{
+        text-align: center;
+    }
+    .con1 .con1_today_more_btn{
+        margin: 20px 0;
+        padding: 10px;
+        border-radius: 20px;
+        border: 1px solid #707070;
+        color: #424242;
+        background-color: white;
+    }
+    /*con1 - 컨텐츠1번 끝!*/
+
+
+    /*con2 컨텐츠2번 - 예술인공간*/
+    .wrap,
+    .con2 {
+      position: relative;
+      height: 100%;
+    }
+
+    .wrap .con2 {
+        background-image: url(./img/con2_bg.png);
+        width: 100%; height: 100%;
+        color: #000;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+
+    /*스와이퍼 플러그인*/
+    .swiper {
+      width: 170%;
+      height: 100%;
+      box-sizing: border-box;
+      padding-top: 10%;
+    }
+
+    .swiper-slide {
+      font-size: 16px;
+      background: #fff;
+      box-sizing: border-box;
+      margin-left: 2%;
+      margin-bottom: 1%;
+      box-shadow:2px 2px 2px #adadad;
+      
+      /* Center slide text vertically */
+      display: block;
+      height: 98%;
+      width: 100%;
+    }
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    /*-- 포스터 아래 글자 정렬 --*/
+    .cnts_02_text{
+        margin-top: 5px;
+    }
+    .swiper-slide span{
+        margin-left: 10px;
+    }
+    .none{
+        box-shadow: none;
+    }
+    /*-- 포스터 아래 글자 정렬 --*/
+
+
+    /*지원사업 입주작가 버튼*/
+    .con2 .select{
+        width: 105px; height: 32px;
+        background-color: white;
+        color: #424242;
+        border-radius: 20px;
+        border: none;
+        padding: 15px;
+        margin-left: 12px;
+        margin-top: 10px;
+        line-height: 1px;
+        filter: drop-shadow(2px 2px 1px rgb(180, 180, 180));
+    }
+
+    /*더보기 버튼*/
+    .con2_btn_box{
+        text-align: center;
+    }
+    .con2 .con2_more{
+        width: 155px; height: 32px;
+        background-color: white;
+        color: #424242;
+        border-radius: 30px;
+        border: 1px solid #707070;
+        padding: 20px;
+        line-height: 1px;
+        margin: 5% 0;
+    }
+
+    .none{background-color: rgba(0, 0, 0, 0);}
+    /*컨텐츠2번 끝*/
+
+    /*con3 컨텐츠3번 - 공지사항*/
+
+    /*태블릿부분부터 보일예정*/
+    .con3 .tablet_notice_name_box{display: none;}
+
+    .con3 {
+        width: 100%; height: 90%;
+        background-color: #303030;
+    }
+
+    .con3 .notice_name_boxing:first-child{
+        padding-top: 5%;
+    }
+    .con3 .notice_name_boxing{
+        width: 80%;
+        margin: 2% 10%;
+        text-align: center;
+    }
+    
+    .con3 .notice_name{
+        font-size: 20px;
+        font-weight: 500;
+        color: white;
+    }
+    
+    .con3 .notice_name:nth-child(1){
+        margin-right: 10%;
+    }
+
+    .con3 .con3_location{ 
+        font-weight: bold;
+        font-size: 15px;}
+    .con3 .con3_date{font-size: 14px;}
+        
+        .con3 ul{
+        width: 90%;
+        margin: 5% 10% 5% 5%;
+        background-color: white;
+    }
+
+    .con3 li{
+        padding: 2.5% 0;
+        margin: 0 2%;
+        border-bottom: 1px solid #707070; 
+    }
+    .con li:last-child{
+        border-bottom: none;
+    }
+
+    .con3 ul li .con3_location{
+        float: left;
+    }
+    .con3 ul li .con3_date{
+        float: right;
+    }
+
+    .con3 ul li p{
+        /* 말줄임 적용 */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+
+    .con3_plus_btn{
+        text-align: center;
+    }
+    .con3_plus_btn img{
+        filter: drop-shadow(2px 2px 2px rgb(65, 64, 64));
+    }
+    /* */
+    
+    /*con4 컨텐츠4번 - 온라인문화 (유튜브채널)*/
+    .con4{
+        width: 100%; height: 100%;
+        margin-bottom: 15px;
+        background-color: #EEEEEE;
+        padding:10px 0;
+    }
+
+    .con4 .youtube_box{
+        width: 90%; height: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
+        color: #707070;
+        font-size: 14px;
+        margin-top: 3%;
+    }
+
+    .youtube_con_box{
+        display: flex;
+        width: 100%;
+        height: 200px;
+        margin-top: 3.7%;
+    }
+
+    .con4 .youtube_con{
+        width: 47.5%; height: 90%;
+        background-color: white;
+        padding: 1% 1%;
+    }
+    .con4 .youtube_con:first-child {
+        margin-right: 4%;
+    }
+    /* con4 end! */
+
+
+    /*con5 컨텐츠5번 - 웹진*/
+    .con5 .name_box{
+        padding-top: 6%;
+        color: white;
+        text-align: center;
+    }
+    .con5 .name_box .name{
+        margin-top: 5%;
+    }
+
+    .con5{
+        width: 100%; height: 100%;
+        background-image: url(./img/snsbg.png);
+        margin-bottom: 70px;
+    }
+
+    .wrap,
+    .con5_swiper_box {
+      position: relative;
+      height: 70%;
+    }
+
+    .con5_swiper_box{
+        /*플러그인*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*플러그인*/
+      .webjinSwiper {
+        width: 200px;
+        height: 315px;
+        margin-bottom: 2%;
+      }
+
+      .webjin_slide {
+        display: block;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        border-radius: 1px;
+        font-size: 15px;
+        font-weight: bold;
+        color: #fff;
+        filter: drop-shadow(2px 2px 3px rgb(83, 83, 83));
+      }
+
+      .webjin_slide img{
+        width: 165px; height: 180px;
+        margin: 12px 16.5px;
+        margin-bottom: 10px;
+      }
+
+      .webjin_slide p{
+        margin-bottom: 2.5%;
+        text-shadow: 1px 1px 1px rgba(82, 82, 82, 0.87);
+      }
+      .webjin_slide font{
+        font-size: 18px;
+      }
+
+      .webjin_slide:nth-child(1n) {
+        background-image: url(./img/webjin_bgs.jpg);
+      }
+
+      .webjin_slide:nth-child(2n) {
+        background-image: url(./img/webjin_bgs_02.jpg);
+      }
+
+
+    /*태블릿버전*/  
+    .con5 .con5_tablet_swiper_box{display: none;}
+
+
+
+    /* con5 end! */
+
+
+    /*con6 컨텐츠6번 - 뉴아트마켓거래소 */
+    .con6{
+        width: 100%; height: 100%;
+        margin-bottom: 70px;
+    }
+
+    /*아트거래소 큰틀 섹션 잡아주기*/
+    .con6 .art_deals{
+        text-align: center;
+        margin: 4% 8%;
+    }
+
+    .con6 .art_deal_box{
+        /*섹션사이즈의 위드 100%라는 뜻
+        이렇게 하니까 좌우 정렬이 똑바로 됨
+        픽셀단위로 하니까 기기마다 좌우 정렬 지맘대로 됨*/
+        width: 100%; height: 100%;
+        border: 1px solid #707070;
+        border-radius: 21px;
+        margin-bottom: 5%;
+    }
+    /*뉴아트거래소 컨텐츠 (이름부분)*/
+    .con6 .art_deal_name{
+        height: 38px;
+        border-bottom: 2px solid #707070;
+        font-size: 14px;
+    }
+    .con6 .art_deal_box .art_deal_name p:first-child{
+        float: left;
+        margin-top: 1.5%;
+        margin-left: 5%;
+        font-size: 18px;
+        font-weight: bold;
+        color: #2331B4;
+    }
+    .con6 .art_deal_box .art_deal_name p:last-child{
+        float: right;
+        margin-top: 1%;
+        margin-right: 5%;
+        background-color: #269F97;
+        padding: 5px;
+        border-radius: 12px;
+        color: white;
+    }
+    .con6 .deal_exchange_box .art_deal_name p:first-child{
+        color: #188A5C;
+    }
+
+    /*뉴아트거래소 컨텐츠 (컨텐츠부분)*/
+    .art_deal_cnts_box{
+        text-align: center;
+        display: flex;
+    }
+    .art_deal_cnts_box .art_deal_img{
+        width: 40%;
+        margin: 2% 1%;
+    }
+    .art_deal_cnts_box .art_deal_text{
+        width: 55%;
+        text-align: left;
+        font-size: 13px;
+    }
+    .art_deal_cnts_box .art_deal_text p:first-child{
+        font-weight: bold;
+        margin: 10px 0;
+        font-size: 15px;
+
+        /* 말줄임 적용 */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+
+    /*태블릿 버전 부터 보인다.*/
+    .art_deal_box_table{display: none;}
+
+    /* con6 end!*/
+
+   /*con7 컨텐츠7번 - 온라인갤러리 */
+   .con7 {
+    width: 100%; height: 100%;
+    background-image: url(./img/gallery.png);
+    display: flex;
+    /*뭔지는 모르겠지만 디스플레이 플렉스를
+    거니까 상하 마진 정렬이되는 상황*/
+    text-align: left;
+}
+.con7 .con7_name_box{
+    width: 90%; height: 90%;
+    margin: 5%;
+    /*뭔지는 모르겠지만 디스플레이 플렉스를
+    거니까 상하 마진 정렬이되는 상황*/
+    background-color: rgba(255, 255, 255, 0.76);
+    color: #707070;
+}
+.con7_name_boxing{
+    width: 80%; height: 80%;
+    margin: 10%;
+    margin-bottom: 30%;
+}
+.con7_name_boxing .tmi{
+    margin-top: 15%;
+}
+
+.con7_more_btn{
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid #707070;
+    float: right;
+    margin-top: 19%;
+    cursor: pointer;
+}
+/* con7 end!*/
+
+    /* !!footer!! */
+    .footer{
+        margin-top: 70px;
+        width: 100%; height: 346px;
+        background-color: #303030;
+        text-align: center;
+        color: white;
+
+        position: relative;
+    }
+    .ft_top{
+        display: flex;
+        font-size: 13px;
+        font-weight: bold;
+        border-bottom: 1px solid #707070;
+        padding: 2% 0;
+        text-align: center;
+    }
+    .ft_top .ft_top_text_012{
+        width: 29%;
+    }
+    .ft_top .ft_top_text_012:last-child{
+        width: 32%;
+    }
+    .ft_top_text_012:first-child{
+        margin-left: 2%;
+    }
+    .ft_top .ft_top_text_034{
+        width: 20%;
+    }
+    .ft_box{
+        text-align: center;
+        line-height: 32px;
+    }
+    .ft_box .ft_box1{
+        width: 100%; height: 100%;
+    }
+    .ft_box .ft_box1 a img{
+        margin: 3% 2%;
+    }
+
+    /*탑버튼*/
+    .ft_box .ft_box1 .top{
+        width: 32px; height: 32px;
+        background-color: #9B8F8F;
+        border: 1.5px solid #707070;
+        filter: drop-shadow(1px 1px 1px rgb(71, 71, 71));
+        color: white;
+        border-radius: 35px;
+        position: absolute;
+        top: 13%; right: 4%;
+        font-size: 10px;
+        
+        line-height: 12px;
+    }
+    .ft_box .ft_box1 .top img{
+        width: 9px; height: 4px;
+        margin-top: 20%;
+    }
+
+
+    .ft_btm_box li{
+        font-size: 12px;
+    }
+    .ft_box .copy{
+        font-size: 10px;
+    }
+
+    /* footer end!*/
+
+    /* 모바일 버전 */
+    @media all and (min-width:320px) {
+
+        #gnb_chk{display: none;} /*체크 버튼 숨기기*/
+        #gnb_chk:checked ~ .gnb{display: block;} /*햄버거 버튼 체크되면 블럭처리*/
+        #gnb_chk ~ .gnb{display: none;} /*체크 안되면 숨기기*/
+        #gnb_chk:checked ~ .close{display: block;}
+
+        #gnb_chk ~ .open{display: block;}/*오픈 아이콘 실행*/
+        
+        /*아이콘 체크되면 오픈 아이콘 없애기*/
+        #gnb_chk:checked ~ .open{display: none;}
+        
+        /*윙배너 닫히면 닫기 아이콘 없애기*/
+        #gnb_chk ~ .close{display: none;}
+
+        #menu_01_chk{display: none;} /*체크 버튼 숨기기*/
+        #menu_01_chk:checked ~ .menu_01_more{display: block;} /**/
+        #menu_01_chk ~ .menu_01_more{display: block;} /**/
+        #menu_01_chk ~ .m1{display: block;} /**/
+
+        .open img{
+        /*햄버거버튼 사이즈 설정*/
+        width: 21px; height: 21px;
+        }
+
+        .open{
+        /*자식포지션*/
+        position: absolute;
+        top: 10px; right: 20px;
+        line-height: 40px;
+        }
+
+        .close{
+        /*햄버거버튼 사이즈 설정*/
+        width: 16px; height: 16px;
+        border: 1px solid #707070;
+        border-radius: 35px;
+        padding: 7px;
+        line-height: 12px; /*테두리 안에 아이콘 x버튼 사이즈 정렬*/
+        
+        /*자식포지션*/
+        position: absolute;
+        top: 8px; right: 12px;
+
+        z-index: 999999;
+        }
+
+        .gnb{
+        /*햄버거 안에 li 메뉴*/
+        position: absolute;
+        top: 0; right: 0;
+        width: 100%;
+        height: 500px;
+        z-index: 99999;
+        width: 100%; height: 755px;
+        background-color: white;
+ 
+        }
+        .gnb li{
+        /*햄버거 li들 
+        알아서 블럭으로 처리됨 li사이즈*/
+        width: 50%; height: 32px;
+        text-align: center;
+        line-height: 32px;
+        background-color: white;
+        color: #707070;
+        }
+
+        /*li이름 - 전체메뉴*/
+        .gnb .all_menu{
+            width: 100%; height: 50px;
+            text-align: center;
+            line-height: 47px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .gnb .search{
+            width: 100%; height: 50px;
+            background-color: #ccc;
+        }
+        .gnb .search .search_box{
+            box-sizing: border-box;
+            width: 90%; height: 40px;
+            margin: 5px 5%;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            text-align: center;
+            line-height: 40px;
+        }
+        .gnb .join_box{
+            width: 100%;
+            height: 43px;
+            background-color: #433427;
+        }
+        .gnb .join_box .join{
+            display: block;
+            float: left;
+            width: 49.7%;
+            height: 100%;
+            background-color: #433427;
+            color: white;
+            font-size: 15px;
+            line-height: 42px;
+        }
+
+        .gnb .join_box .join img{
+            vertical-align:middle;
+            margin-bottom: 3px;
+        }
+
+        /*메뉴창 li바탕 흰 부분*/
+        .gnb .menu_tittle{
+            width: 100%; height: 87%;
+            border-radius: 0 0 10px 10px;
+            overflow: scroll;
+            border: none;
+            position: relative;
+            box-shadow: 0px 10px 3px 1px rgb(87, 87, 87);
+            
+        }
+
+        .gnb .menu_tittle li{
+            width: 49.2%;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;    
+        }
+
+        /*모바일 lnb 플러그인*/
+        .ui-menu { 
+            width: 100%;}
+        
+        .ui-widget-header div{ 
+            height: 90%;
+            box-sizing: border-box;
+            overflow: hidden;
+            padding: 0; margin: 0;
+            border-top: 0.5px solid #ccc;
+            line-height: 40px;}
+
+        .ui-widget-header div a{
+            color: #707070;
+            font-size: 16px;
+        }    
+        
+        .sub_menu_more div a{
+            font-size: 14px;
+            color: #8f8f8f;
+        }
+        
+
+        .menu_tittle .menus ul li:last-child{
+            border: none;
+        }
+        .menu_tittle .menus ul li{
+            width: 100%;
+            border: none;
+        }
+
+        .sub_tittle{
+            display: none;
+        }
+        
+    }    
+    /* */
+
+    @media all and (min-width:768px) {
+
+        /*햄버거 버튼 사이즈 조정*/
+        .open img {width: 30px; height: 30px;}
+
+        .header{
+            width: 100%; height: 800px;
+            background-image: url(./img/tablet_main.png);
+        }
+
+        .header .lnb{
+            padding-top: 1.5%;
+            display: flex;
+        }
+
+        .header .lnb .logo{
+            display: none;
+        }
+        .header .lnb .logos{
+            display: block;
+            width: 100%;
+            margin-left: 3%;
+        }
+
+        .header .lnb .eng{
+            width: 20%;
+            margin-top: 0.5%;
+            font-size: 22px;
+        }
+
+        /*햄버거 버튼*/
+        .open{
+            /*햄버거버튼 사이즈 설정*/
+            width: 23px; height: 23px;
+            
+            /*자식포지션*/
+            position: absolute;
+            top: 14px; right: 32px;
+            line-height: 40px;
+            }
+
+        /*햄버거 카테고리 진입창 크기 수정*/
+        .gnb .all_menu{
+            width: 100%; height: 55px;
+        }
+
+        .gnb .search{
+            width: 100%; height: 55px;
+            background-color: #ccc;
+        }
+        .gnb .search .search_box{
+            box-sizing: border-box;
+            width: 93%; height: 41px;
+            margin: 7px 3%;
+            border: 1px solid #ccc;
+            border-radius: 17px;
+            text-align: center;
+            line-height: 40px;
+        }
+        .gnb .join_box{
+            width: 100%;
+            height: 46px;
+        }    
+
+        .gnb .join_box .join img{
+            margin-top: 5px;
+        }
+
+        /*메뉴창 li바탕 흰 부분*/
+        .gnb .menu_tittle{
+            box-shadow: 0px 5px 3px 1px rgb(87, 87, 87);
+        }
+
+        /*--*/
+
+        /*비주얼메인*/
+        .header .visualSwiper {
+          display: block;
+          width: 416px;
+          height: 630px;
+
+          /*12.10 수정 - 비주얼메인 포스터와 글자 정렬이
+          주먹구구형태라 정렬형식 변경*/
+          /*비주얼메인 글자 정렬 = 텍스트 얼라인 : 센터*/
+          text-align: center;
+          
+          /*비주얼메인 포스터 정렬 마진 0 , 좌우는 오토*/
+          margin: 0 auto;
+          /* - 12.10 수정사항 끝 - */
+        }
+        
+
+        .header .visual_contents .visual_slide img {
+          width: 416px;
+          height: 600px;
+          object-fit: cover;
+        }
+
+        .visual_name{
+            font-size: 22px;
+            opacity: 0.85;
+            text-shadow: 2px 3px 5px #424242;
+        }
+        /*비주얼메인 끝*/
+    
+
+        /* 메타포 아이콘 */    
+        .icon_box{
+            width: 100%; height: 220px;
+        }
+    
+        .icon_box .icon {
+            width: 14%; height: 70%;
+            margin-top: 4%;
+            margin-left: 2.05%;
+            font-size: 14px;
+            border: 1px solid rgb(238, 238, 238);
+            border-radius: 15px;
+        } 
+        .icon_box .icon .icon_img{
+            width: 75px; height: 68px;
+            opacity: 0.9;
+            margin: 0 20%;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        /*메타포 아이콘 끝*/
+        
+
+        /*-- 컨텐츠 부분 시작 --*/
+        /*제목부분 .con .name으로 통합 적용*/
+        .wrap .con .name{
+            width: 100%; height: 50px;
+            line-height: 50px;
+            margin-left: 40px;
+            padding-top: 5%;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .sub_tittle{
+            display: block;
+            color: #999999;
+            margin-left: 40px;
+            margin-bottom: 10px;
+        }
+        
+        /*컨텐츠 카테고리 통합*/
+        .ctgry_con2{
+            background-color: red;
+            color: white;
+            border-radius: 20px; font-size: 14px;
+            padding: 5px 10px;
+            margin: 10px 0;
+            margin-left: 10px;
+            margin-bottom: 20px;
+    
+        }
+    
+        
+
+        .cnts_names{
+            margin: 0 10px;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 18px;
+
+            /* 말줄임 적용 */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; 
+        }
+
+        .dates{
+            margin: 4px 10px;
+            border-left: 10px;
+            font-size: 17px;
+        }
+        /**/
+    
+        /*con1 컨텐츠1번 - 오늘의 공연, 전시*/
+        /*con1 배경*/
+        .wrap .con1{
+            width: 100%; height: 100%;
+        }
+        .wrap .con1 .ctns_box{
+            width: 80%; height: 70%;
+            border: 1px solid black;
+        }
+        .wrap .con1 .cnts_box .cnts_boxing {
+            display: flex;
+            width: 42%; height: 34%;
+            margin: 0 2.3%;
+            margin-top: 4%;
+            float: left;
+        }
+        .wrap .con1 .cnts_box .cnts_boxing:first-child{
+            margin-left: 5.5%;
+        }
+
+
+        /*포스터있는 곳 박스처리*/
+        .wrap .con1 .cnts_box .cnts{
+            display: block;
+            float: left;
+            width: 48%; height: 34%;
+            border-radius: 5px;
+            box-shadow:2px 2px 2px #adadad;
+            padding-bottom: 1%;
+        }
+
+        /*마진 맞추기*/
+        .wrap .con1 .cnts_box .cnts:nth-child(1),
+        .wrap .con1 .cnts_box .cnts:nth-child(3){
+            margin-right: 10%;
+
+        }
+
+        /*오늘의 전시 더보기 버튼*/
+        .con1 .con1_btn_box{
+            text-align: center;
+        }
+        .con1 .con1_today_more_btn{
+            padding: 15px;
+            border-radius: 100px;
+            margin: 5% 0;
+        }
+        /*con1 - 컨텐츠1번 끝!*/
+
+    
+        /*con2 컨텐츠2번 - 예술인공간*/
+        .wrap .con2 {
+            background-image: url(./img/con2_bg_tablet.png);
+        }    
+
+
+        /*스와이퍼 플러그인*/
+        .swiper {
+          width: 100%;
+          height: 100%;
+          padding-top: 8%;
+          margin-left: 1%;
+        }
+
+        /*-- 포스터 아래 글자 정렬 --*/
+        .cnts_02_text{
+            margin: 5% 0;
+        }
+        .swiper-slide span{
+            margin-left: 10px;
+        }
+        .none{
+            box-shadow: none;
+        }
+        /*-- 포스터 아래 글자 정렬 --*/
+    
+    
+        /*지원사업 입주작가 버튼*/
+        .con2 .select{
+            width: 115px; height: 42px;
+            margin-top: 20px;
+            margin-left: 25px;
+            filter: drop-shadow(4px 3px 4px rgb(180, 180, 180));
+        }
+    
+        /*더보기 버튼*/
+        .con2_btn_box{
+            text-align: center;
+            padding-bottom: 3%;
+        }
+        .con2 .con2_more{
+            padding: 25px;
+            margin-top: 8%;
+        }
+    
+        /*태블릿 버전에서
+        스와이프시 모바일버전에 비해
+        컨텐츠 여백이 많이 남아서 하나 삭제*/
+        .none:last-child{display: none;}
+        /*컨텐츠2번 끝*/   
+
+    /*con3 컨텐츠3번 - 공지사항*/
+    .con3 .notice_name_box{ display: none;}
+    .con3 .tablet_notice_name_box{display: block;}
+    .con3 .tablet_notice_name_boxing{
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 4%;
+        text-align: center;
+    }
+    .con3 .tablet_notice_name{
+        width: 20%;
+        margin: 0 4%;
+        font-size: 28px;
+        font-weight: 500;
+        color: white;
+    }
+    .con3 .tablet_notice_name:hover{
+        color: #FF9900;
+        border-bottom: 2px solid #FF9900;
+        padding-bottom: 3px;
+    }
+    /*con3 컨텐츠3번 공지사항 끝*/
+
+    /*con4 컨텐츠4번 - 온라인문화 (유튜브채널)*/
+    .con4 p{ 
+        margin-left: 40px;
+        margin-bottom: 4%;
+        color: #707070;
+    }
+
+    .con4 .youtube_box{
+        padding-bottom: 2%;
+    }
+
+    .con4 .youtube_main iframe{
+        width: 100%; height: 350px;
+    }
+
+    .con4 .youtube_box{
+        width: 90%; height: 90%;
+        box-sizing: border-box;
+        margin: 0 auto;
+        color: #707070;
+        font-size: 14px;
+    }
+
+    .youtube_con_box{
+        display: flex;
+        width: 100%;
+        height: 300px;
+        margin-top: 3.7%;
+    }
+
+    .con4 .youtube_con iframe{
+        height: 150px;
+    }
+
+    .con4 .youtube_con{
+        width: 47.5%; height: 90%;
+        background-color: white;
+        padding: 1% 1%;
+    }
+    .con4 .youtube_con:first-child {
+        margin-right: 4%;
+    }
+    /* con4 end! */    
+
+    /*con5 컨텐츠5번 - 웹진*/
+    .con5 .name_box{
+        padding-top: 0%;
+        color: white;
+        text-align: center;
+    }
+    .con5 .name_box .name{
+        margin-top: 0%;
+        margin-left: 0;
+    }
+
+    /*서브타이틀명 마진정렬 안되서 con5부분만 재정렬*/
+    .con5 .sub_tittle{margin-right: 50px;}
+
+    .con5{
+        width: 100%; height: 100%;
+        background-image: url(./img/snsbg.png);
+        margin-bottom: 70px;
+    }
+
+    .wrap,
+    .con5_tablet_swiper_box{
+      position: relative;
+      height: 100%;
+    }
+
+    .con5_tablet_swiper_box{
+        margin: 0;
+        padding: 0;
+    }
+
+    .tabletSwiper {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .tablet_swiper-wrapper {
+      background-size: cover;
+      width: 290px;
+      height: 365px;
+      text-align: center;
+      line-height: 0px;
+    }
+
+    /*부모에다 백그라운드 이미지 씌우니까 맛가서
+    div새로 만들어 백그라운드 이미지 생성*/
+    .tablet_swiper-wrapper .bg_box{
+        width: 100%; height: 100%;
+        background-image: url(./img/webjin_bgs.jpg);
+
+        /*글자 넣니까 여백 간격 안맞아서 패딩 바텀 넣어줌*/
+        padding-bottom: 2%;
+    }
+    .tablet_swiper-wrapper .bg_box2,
+    .tablet_swiper-wrapper .bg_box4{
+        background-image: url(./img/webjin_bgs_02.jpg);
+    }
+
+    .tablet_swiper-wrapper img {
+        width: 80%; height: 80%;
+        margin: 0% 35% 10% 10%;
+        padding-top: 7%;
+    }
+
+    .con5 .con5_swiper_box{display: none;}
+    .con5 .con5_tablet_swiper_box{display: block;}
+    /* con5 end! */
+
+        /*con6 컨텐츠6번 - 뉴아트마켓거래소 */
+
+        /*태블릿 버전 부터 보인다.*/
+        .art_deal_box_table{display: block;}
+
+        .con6 .art_deal_box .art_deal_name p:first-child{
+            margin-top: 2.3%;
+            margin-left: 5%;
+        }
+        .con6 .art_deal_box .art_deal_name p:last-child{
+            margin-top: 1.5%;
+            margin-right: 5%;
+        }
+
+        .con6{
+            width: 100%; height: 560px;
+            margin-bottom: 70px;
+        }
+
+        /*아트거래소 큰틀 섹션 잡아주기*/
+        .con6 .art_deals{
+            margin: 4% 5%;
+        }
+    
+        .con6 .art_deal_box{
+            /*섹션사이즈의 위드 100%라는 뜻
+            이렇게 하니까 좌우 정렬이 똑바로 됨
+            픽셀단위로 하니까 기기마다 좌우 정렬 지맘대로 됨*/
+            width: 48%; height: 100%;
+            float: left;
+        }
+        .con6 .art_deal_box:first-child,
+        .con6 .art_deal_box:nth-child(3){
+            margin-right: 3%;
+        }
+    
+        /*뉴아트거래소 컨텐츠 (컨텐츠부분)*/
+        .art_deal_cnts_box .art_deal_img{
+            width: 40%;
+            margin: 2% 0;
+        }
+        .art_deal_cnts_box .art_deal_text{
+            font-size: 16px;
+        }
+        .art_deal_cnts_box .art_deal_text p:first-child{
+            font-size: 18px;
+        }
+    
+        /* con6 end!*/
+
+        /*con7 컨텐츠7번 - 온라인갤러리 */
+        .con7 {
+         width: 100%; height: 100%;
+         background-image: url(./img/gallery.png);
+         display: flex;
+         /*뭔지는 모르겠지만 디스플레이 플렉스를
+         거니까 상하 마진 정렬이되는 상황*/
+         text-align: left;
+        }
+        .con7 .con7_name_box{
+            width: 40%; height: 100%;
+            /*뭔지는 모르겠지만 디스플레이 플렉스를
+            거니까 상하 마진 정렬이되는 상황*/
+            background-color: rgba(255, 255, 255, 0.76);
+            color: #707070;
+            margin-left: 60%;
+        }
+        .con7_name_boxing{
+            width: 90%; height: 80%;
+            margin: 10% 7%;
+            margin-bottom: 30%;
+        }
+        .con7_name_boxing .tmi{
+            margin-top: 15%;
+        }
+
+        .con7_more_btn{
+            margin-top: 12%;
+            margin-right: 3%;
+        }
+        /* con7 end!*/  
+        
+        /*태블릿버전 푸터*/
+
+        /*12.10 수정 - 푸터 하단 아이콘 크기가 모바일 버전으로
+        너무 작아서 pc버전 아이콘으로 수정함.*/
+        .ft_box .ft_box1 .mobile_ft_sns{display: none;}
+        /*디스플레이 블럭했으나 아이콘 정렬이 안되서
+        인라인 블럭으로 처리함.*/
+        .ft_box .ft_box1 .tablet_ft_sns{display: inline-block;}
+        /*- 12.10 수정 끝 -*/
+
+        .ft_top{
+            display: flex;
+            font-size: 15px;
+            font-weight: bold;
+            border-bottom: 1px solid #707070;
+            padding: 2% 0;
+            text-align: center;
+        }
+        .ft_top p:first-child{
+            margin-left: 5%;
+        }
+        .ft_top p:last-child{
+            margin-right: 5%;
+        }
+
+        /*탑버튼*/
+        .ft_box .ft_box1 .top{
+            width: 55px; height: 55px;
+            border: 2px solid #707070;
+            top: 20%; right: 3%;
+            font-size: 18px;
+            
+            line-height: 18px;
+            font-weight: bold;
+        }
+        .ft_box .ft_box1 .top img{
+            width: 12px; height: 7px;
+        }
+    
+    
+        .ft_btm_box li{
+            font-size: 12px;
+        }
+        .ft_box .copy{
+            font-size: 10px;
+        }    
+    }
+
+        @media all and (min-width:1024px) {
+            #gnb_chk ~ .open{display: none;}/*오픈 햄버거 아이콘 버튼 숨김*/
+            .header .lnb{display: none;}
+            .visual_main_box{display: none;}
+            .contents_07{display: none;}
+            .section4-wrap{display: block;}
+            .wrap .cnts_box{display: none;}
+
+            .header{
+                width: 100%; height: 1080px;
+                background-image: url(./img/main_PC.png);
+            }
+
+            /*제목부분 .con .name으로 통합 적용*/
+            .wrap .con .name{
+                display: block;
+                width: 80%; height: 40px;
+                margin: 0 10%;
+                font-size: 28px;
+                font-weight: bold;
+                box-sizing: border-box;
+                padding-bottom: 10%;
+                padding-top: 0;
+            }
+            .con .name p{
+                font-size: 22px;
+                color: #707070;
+            }
+
+
+            /*con1번 더보기버튼 이미지 설정*/
+            .wrap .con .name{
+                position: relative;
+                margin-top: 20px;
+            }
+            .con .name img{display: block;}
+            .wrap .con .name img{
+                position: absolute;
+                right: 0;
+                
+            }
+            .wrap .con .name .pc_con1_btn{
+                position: absolute;
+                right: 40px;
+                bottom: 32px;
+                font-size: 18px;
+            }
+            .wrap .con .name p{display: block;}
+            .wrap .con .sub_tittle{display: none;}
+
+            /*con5 컨텐츠5번 - 웹진*/
+        /*.wrap .con5 .name{
+            margin: 0 10%;
+            text-align: center;
+            }
+
+            .con5 .name_box{
+        padding-top: 0%;
+    }
+    .con5 .name_box .name font{display: none;}
+    .con5 .name_box .name p{
+        display: block;
+        margin-top: 20px;
+    }*/
+    .con5{
+        width: 100%;
+    }
+    .con5 .name font{display: none;}
+    .con5 .name_box{
+        display: flex;
+        text-align: center;
+    }
+    .con5 .name_box p {
+        color: white;
+    }
+
+    
+
+
+            /*pc버전 gnb*/
+            .pc_gnb{
+                display: block;
+                width: 100%; height: 50px;
+                color: white;
+                line-height: 50px;
+                margin: 1% 0;
+            }
+            .pc_gnb ul{float: right;}
+            .pc_gnb ul li{
+                float: left;
+                margin-right: 10px;
+            }
+
+            .pc_lnb{
+                display: block;
+                width: 100%; 
+                color:  white;
+                font-size: 25px;
+            }
+            .pc_lnb .logo{
+                width: 100px; height: 50px;
+                float: left;
+                margin: 0 4%;
+                margin-left: 2%;
+            }
+            .pc_lnb .logo img{ width: 130px; height: 70px;}
+
+            .pc_lnb ul{ overflow: hidden;}
+
+            .pc_lnb ul .pc_btn_menu{
+                width: 160px; height: 80px;
+                line-height: 80px;
+                text-align: center;
+                float: left;  
+                overflow: hidden;
+            }
+            .pc_lnb ul .pc_btn_menu:nth-child(3){
+                width: 220px;
+            }
+
+            .pc_lnb ul li:hover .pc_list_menu{
+                display: block;
+            }
+
+            .pc_lnb .pc_list_menu{
+                position: absolute;
+                z-index: 99;
+                width: 100%; height: 500px;
+                color: black;
+                background-color: white;
+                font-size: 20px;
+                display: none;
+                padding: 30px;
+            }
+            .pc_lnb .pc_list_menu .lnb_main{
+                width: 140px; height: 100%;
+                padding: 0px 10px;
+                float: left;
+            }
+            .pc_lnb .pc_list_menu .lnb_main:nth-child(2){
+                margin-left: 30px;
+            }
+            .pc_lnb .pc_list_menu .lnb_main:nth-child(5){
+                width: 170px;
+            }
+            .pc_lnb .pc_list_menu .lnb_main:last-child{
+                width: 185px;
+            }
+            .pc_lnb .pc_list_menu .lnb_main:last-child p a{
+                color: black; /*a링크의 폰트기본색으로 변경되어, 폰트색 변경*/
+            } 
+            .pc_lnb .pc_list_menu .lnb_main p{
+                margin-bottom: 15px;
+                font-size: 22px;
+                font-weight: bold;
+            }
+            .pc_lnb .pc_list_menu .lnb_main .pc_lnb_sub_name{
+                font-size: 16px;
+                font-weight: 400;
+            }
+            .pc_lnb .pc_list_menu ul li{
+                text-align: left;
+                margin: 12% 0;
+                font-size: 16px;
+
+                /* 말줄임 적용 */
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis; 
+                /*-----------*/ 
+            }
+
+
+            /**/
+            /*.lnb{
+                width: 1050px; height: 50px;
+                color:  white;
+                background-color: black;
+            }
+            .lnb .btn_menu{
+                width: 50px; height: 50px;
+                text-align: center;
+                line-height: 50px;
+                float: left;
+            }
+            .lnb ul{
+                overflow: hidden;
+            }
+            .lnb li {
+                width: 200px; height: 50px;
+                text-align: center;
+                line-height: 50px;
+                float: left;
+            }
+            .pc_lnb .pc_list_menu{
+                width: 1050px; height: 300px;
+                border: 1px solid black; box-sizing: border-box;
+                color: black;
+                font-size: 50px;
+                text-align: center;
+                line-height: 300px;
+                display: none;
+    
+            }
+            /**/
+
+            /*아이콘 박스*/
+            .header{position: relative;}
+            .icon_box{
+                position: absolute;
+                width: 100px; height: 700px;
+                /* 팀플 기본색상은 #353535인데, 개인적으로 
+                색상이 좀 진한감이 있다고 생각이 되어 백그라운드 컬러에 불투명도를 주었다.*/
+                background-color: #353535;
+                text-align: center;
+                padding-left: 7px;
+                padding-top: 7px;
+                border-radius: 12px 0px 0px 12px;
+
+                top: 3.5%;
+                right: 0;
+            }
+        
+            .icon_box .icon {
+                width: 80px; height: 15%;
+                text-align: center;
+                font-size: 12px;
+                margin-bottom: 2%;
+                padding: 1%;
+                
+                /* 말줄임 적용 */
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis; 
+                /*-----------*/ 
+            } 
+            
+            .icon_box .icon .icon_img{
+                width: 42px; height: 41px;
+                opacity: 0.9;
+                margin-top: 20px;
+                margin-bottom: 5px;
+            }
+            .icon_box .icon:hover{
+                background-color: rgba(255, 255, 255, 0.082);
+            }
+            .icon_box .icon:hover .icon_img{
+                filter: invert(38%) sepia(76%) saturate(3782%) 
+                hue-rotate(10deg) brightness(105%) contrast(105%);
+                transform: scale(1.1);
+            }
+            
+            /*아이콘 끝*/
+
+            /*pc버전 비주얼메인~*/
+            .banner_box{display: block;}
+
+            
+
+            .banner_box{
+             width: 80%;
+             margin-left: 6%;
+             margin-top: 10%;
+             position: relative; /*부모라서 릴레이티브 포지션*/
+             box-sizing: border-box;
+             }
+
+    .banner{
+        width: 100%;
+    }
+    .frame{
+        width:100%; height: 630px;
+        overflow: hidden;
+        position: relative; /*ul 포지션용으로 사용 부모역할
+        이걸 앱솔루트로 하니까 프레임이 엉망되어 버림 주의*/
+    }
+    .frame ul{
+        display: block;
+        width: 100%; /*여기서 ul의 사이즈는 중요하지 않다. 어차피 히든으로 쳐서 슥슥 넘어갈끼라*/
+        height: 100%;
+        position: absolute;
+        top:0;
+    }
+    .frame li{
+        width: 100%;
+        padding: 0 8px; /*사진의 좌우 여백을 주기 위함.*/
+        /*여백을 주고 싶으면 패딩을 넣으세요*/
+        /*사이트의 스타일에 따라서 패딩을 넣고 빼기
+        css마진 패딩 어쩌구*/
+
+    }
+
+            .con1_box{
+                display: block;
+                width: 100%;
+                float: left;
+            }
+            .pc_visual_main_img_box{
+                display: block;
+                width: 490px;
+                position: absolute;
+                left: 0%;
+                box-shadow: 5px 5px 5px rgba(54, 54, 54, 0.616);
+                margin-left: 5%;
+            }
+      
+            .pc_visual_main_img_box img {
+                width: 100%; height: 100%;
+            }
+
+            .pc_visual_main_txt_box{
+                display: block;
+                width: 60%; height: 60%;
+                background-color: #646464;
+                position: absolute;
+                bottom: 0;
+                left: 30.7%;
+                padding-top: 1%;
+            }
+            .pc_visual_main_txt_box .txt_boxing{
+                width: 90%; height: 90%;
+                margin: 3% 4%;
+            }
+            .con1_txt {
+                background-color: #bfb696;
+            }
+            .con2_txt {
+                background-color: #252d37;
+            }
+            .con3_txt {
+                background-color: #534d4e;
+            }
+
+            .pc_visual_main_txt_box .ctgry_con1{
+                padding: 0.5%;
+                border-radius: 20px;
+            }
+            .pc_visual_main_txt_box p{
+                color: white;
+                font-size: 20px;
+                margin-top: 15px;
+                /* 말줄임 적용 */
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis; 
+                /*-----------*/ 
+            }
+            .pc_visual_main_txt_box .cnts_name{
+                font-size: 26px;
+                margin-top: 5px;
+            }
+
+
+
+    /*버튼 정렬*/
+    .ctr_btn{
+        position: absolute;
+        right: 0; top: 5px;
+        opacity: 0.8;
+    }
+    .banner_box .btn{
+        opacity: 0.6;
+    }
+    .left{
+        position: absolute;
+        top: 50%; left: -10px;
+        margin-top: -15px;
+        z-index: 10;
+    }
+    .right{
+        position: absolute;
+        top: 50%; right: 20px;
+        margin-top: -15px;
+    }
+            
+            /*pc버전 비주얼메인 끝~*/
+    
+    /*콘텐츠1번 정렬*/ 
+   /*con1 컨텐츠1번 - 오늘의 공연, 전시*/
+   .con1_btn_box{display: none;}
+
+    /*.wrap .con1 .ctns_box{
+        display: inline-block;
+        width: 1920px; height: 70%;
+        border: 1px solid black;
+        float: left;
+    }
+
+    .pc_cnts_main{
+        margin: 0; padding: 0;
+        float: left;
+        display: flex;
+        width: 35%; height: 1000px;
+        border: 10px solid saddlebrown;
+    }
+    .pc_cnts_boxing{
+        margin: 0;
+        display: flex;
+        width: 64%;
+        border: 10px solid palegreen;
+        height: 100%;
+        float: right;
+    }
+    .wrap .con1 .cnts_box .cnts_boxing {
+        width: 100%; height: 500px;
+        float: left;
+        border: 10px solid black;
+    }*?
+
+    /*포스터있는 곳 박스처리*/
+    /*.wrap .con1 .cnts_box .cnts{
+        display: block;
+        float: left;
+        width: 48%; height: 100%;
+        
+    }*/
+
+    /*마진 맞추기*/
+    /*.wrap .con1 .cnts_box .cnts:nth-child(1),
+    .wrap .con1 .cnts_box .cnts:nth-child(3){
+        margin-right: 0;
+
+    }*/
+
+    /*컨텐츠 채우기*/
+    /*.wrap .con1 .cnts_box .cnts img{
+        width: 100%;
+        height: 60%;
+        overflow: hidden;
+        box-sizing: border-box;
+        border-radius: 5px 5px 0 0;
+    }*/
+
+    /*오늘의 전시 더보기 버튼*/
+    /*.con1 .con1_btn_box{
+        text-align: center;
+    }
+    .con1 .con1_today_more_btn{
+        padding: 10px;
+        border-radius: 20px;
+        border: 1px solid #707070;
+        color: #424242;
+        background-color: white;
+        margin-top: 10%;
+    }*/
+
+
+    /*con1 - 컨텐츠1번 끝!*/
+        
+    /*콘텐츠1번 정렬*/
+    .wrap .contents_01{
+        width: 100%;
+    }
+
+    .wrap .con1 .name{
+        display: block;
+        width: 80%; height: 40px;
+        margin-bottom: 0;
+        margin-top: 40px;
+        font-size: 28px;
+        font-weight: bold;
+        padding-bottom: 7%;
+        
+
+        position: relative;
+    }
+
+    .wrap .con1 .name img{
+        position: absolute;
+        bottom: 0%;
+    }
+
+    .wrap .contents_01 .con1_name{
+        margin-left: 14%;
+    }
+
+    .wrap .contents_01 .pc_con1_box{
+        display: flex;
+        width: 80%; height: 100%;
+        margin: 0 10%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: 12%;
+    }
+    /*.wrap .contents_01 .pc_con1_box{
+        display: block;
+        width: 80%; height: 100%;
+        margin: 0;
+        padding: 0;
+        margin: 0 10%;
+        margin-right: 40%;
+        border: 1px solid black;
+        margin: 50px 0;
+        box-sizing: border-box;
+    }*/
+
+    .wrap .contents_01 .pc_con1_box .pc_con1_ctgry_box{
+        padding-top: 1%;
+        padding-left: 2%;
+        padding-right: 1%;
+        /* 말줄임 적용 */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        /*-----------*/ 
+    }    
+    .wrap .contents_01 .pc_con1_main_con .pc_con1_ctgry_box{
+        padding-top: 11%;
+        padding-left: 0%;
+    }
+
+    .wrap .contents_01 .pc_con1_box .pc_con1_in_box{
+        display: flex;
+        width: 100%; height: 100%;
+        margin: 0% auto;
+    }
+    .wrap .contents_01 .pc_con1_box .pc_con1_in_box .pc_con1_main_con_box{
+        width: 580px; height: 100%;
+        margin-right: 5%;
+    }
+
+    /******/
+    .pc_con1_in_box .pc_con1_main_con_box .pc_con1_main_con{
+        width: 100%; height: 890px;
+        box-shadow:2px 5px 10px #adadad;
+    }
+    .pc_con1_in_box .pc_con1_main_con_box .pc_con1_main_con .pc_con1_main_con_img_box{
+        width: 100%; height: 65%;
+    }
+    .pc_con1_in_box .pc_con1_main_con_box .pc_con1_main_con img{
+        width: 100%; height: 100%;
+    }
+    .pc_con1_main_con .pc_con1_main_con_img_box .hover_txt{
+        width: 80%; height: 80%;
+        margin: 5%;
+        padding: 5% 5%;
+        border: 1px solid white;
+    }
+    /*******/
+
+    .pc_con1_main_con .pc_con1_ctgry_box span,
+    .pc_con1_main_con .pc_con1_ctgry_box p{
+        margin-left: 20px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+    .pc_con1_main_con .pc_con1_ctgry_box .cnts_name{
+        font-size: 21px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        margin-top: 10px;
+    }
+
+    /*con1 메인컨텐츠 호버이미지*/
+    .pc_con1_box .pc_con1_main_con .hover_on{display: none;}
+    .pc_con1_box .pc_con1_main_con .hover_txt{display: none;}
+    .pc_con1_main_con .pc_con1_main_con_img_box:hover .hover_off{
+        display: none;
+    } 
+    .pc_con1_main_con .pc_con1_main_con_img_box:hover .hover_on{
+        display: block;
+    } 
+    .pc_con1_main_con .pc_con1_main_con_img_box{
+        text-align: center;
+        position: relative;
+    }
+    .pc_con1_main_con .pc_con1_main_con_img_box:hover .hover_txt{
+        display: block;
+        position: absolute;
+        top: 3%;
+    }
+    .pc_con1_main_con .pc_con1_main_con_img_box .hover_txt p{
+        color: white;
+        margin-bottom:20px;
+    }
+    .pc_con1_main_con .pc_con1_main_con_img_box .hover_txt p:first-child{
+        margin-top: 25%;
+        font-size: 21px;
+    }
+    .pc_con1_main_con .pc_con1_main_con_img_box .hover_txt button{
+        padding: 3% 7%;
+        border-radius: 50px;
+        border: none;
+    }
+    /*******/
+
+
+
+    /*.wrap .contents_01 .pc_con1_box .pc_con1_in_box .pc_con1_jabcon_box{
+        width: 60%; height: 100%;
+    }*/
+    .pc_con1_in_box .pc_con1_jabcon_box .pc_con1_jabcon_con_box{
+        width: 100%; height: 430px;
+    }   
+    .pc_con1_in_box .pc_con1_jabcon_box .pc_con1_jabcon_con_box:first-child{
+        margin-bottom: 30px;
+    }
+    .pc_con1_in_box .pc_con1_jabcon_box .pc_con1_jabcon_con_box .pc_jabcon_123456{
+        width: 25%; height: 100%;
+        box-shadow:2px 5px 10px #adadad;
+        float: left;
+        margin-right: 3%;
+    }
+    .pc_con1_in_box .pc_con1_jabcon_box .pc_con1_jabcon_con_box .pc_jabcon_123456 img{
+        width: 100%; height: 67%;
+        margin-bottom: 4px;
+    }
+    .pc_con1_in_box .pc_con1_jabcon_box .pc_con1_jabcon_con_box .pc_jabcon_123456 .pc_con1_ctgry_box{
+        padding-left: 4%;
+    }
+    .pc_con1_in_box .pc_con1_jabcon_box .pc_con1_jabcon_con_box .pc_jabcon_123456:hover{
+        scale: 1.01;
+    }
+    /*콘텐츠1번 정렬*/ 
+    
+    /*콘텐츠2번*/
+
+    /*pc버전에서 사이즈가 커서 줄이기위한 방안으로 
+    랩에다가 오버플로우 히든을 거니까 해결됨*/
+    .wrap{overflow: hidden;}
+    
+    .cnts02_swiper{display: none;}
+    .wrap .contents_02{
+        padding: 4%;
+        width: 100%; 
+        display: block;
+    }
+    .wrap .con2_btn_box{
+        display: none;
+    }
+    .wrap .con2_btn_box_01{
+        margin-left: 8%;
+    }
+    .pc_con2_box{
+        display: flex;
+        width: 90%;
+        margin: 0 5%;
+        padding-left: 3%;
+        margin-top: 3%;
+        float: left;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    .wrap .pc_con2_box .pc_con2_123456box{
+        width: 29.5%;
+        display: block;
+        float: left;
+        margin: 0;
+    }
+
+    .pc_cnts02{ 
+        display: block;
+        width: 208px;
+        float: left;
+        background-color: rgb(255, 255, 255);
+        margin: 0;
+        margin-right: 7%;
+        margin-bottom: 100px;
+        box-shadow:2px 5px 10px #adadad;
+
+        /* 말줄임 적용 */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        /*-----------*/ 
+    }
+    .pc_con2_02,
+    .pc_con2_04,
+    .pc_con2_06{
+        margin-right: 0%;
+    }
+
+    .pc_cnts02:hover{
+        transform: scale(1.01);
+        background-color: #e0d8c7;
+    }
+    .pc_con2_02:hover{
+        background-color: #c9c7aa;
+    }
+    .pc_con2_03:hover{
+        background-color: #f5b15f;
+    }
+    .pc_con2_04:hover{
+        background-color: #9abce7;
+    }
+    .pc_con2_05:hover{
+        background-color: #eea792;
+    }
+    .pc_con2_06:hover{
+        background-color: #bbbdc0;
+    }
+
+    .con2_btn_box_01 .select:hover{
+        transform: scale(1.01);
+        font-weight: 550;
+    }
+
+    /*pc공지사항*/
+    .wrap .tablet_notice_name_box{display: none;}
+    .notice_tmi_box{display: none;}
+    .con3_plus_btn{display: none;}
+
+    .pc_notice_box{
+        display: block;
+        width: 100%; height: 320px;
+        position: relative;
+    }
+    .pc_notice_inbox{
+        float: left;
+        width: 15%; height: 100%;
+    }
+    .pc_notice_inbox_end{width: 12%;}
+
+    .pc_notice_tmi_box{
+        position: relative;
+        background-color: white;
+        border: 1px solid #707070;
+        box-sizing: border-box;
+        padding: 1%;
+    }
+
+    .pc_notice_name{
+        text-align: center;
+    }
+    .pc_notice_name p{
+        width: 100%; height: 25%;
+        font-size: 24px;
+        line-height: 72px;
+        margin-left: 10%;
+        color: white;
+    }
+    .pc_notice_name p:hover font{
+        color: #FF9900;
+        border-bottom: 5px solid #FF9900;
+        padding-bottom: 3px; /*밑에 밑줄 글자랑 살짝 띄워주기 위함.*/
+    }
+
+    .pc_notice_tmi_box .notice_place_name{
+        font-size: 21px;
+        color: #FF9900;
+        font-weight: bold;
+        margin-bottom: 5%;
+        /* 말줄임 적용 */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        /*-----------*/ 
+        
+    }
+    .pc_notice_tmi_box .notice_tmi_name{
+        color: #707070;
+    }
+    .pc_notice_tmi_box .notice_date_name{
+        font-size: 20px;
+        font-weight: bold;
+        color: #707070;
+
+        position: absolute;
+        bottom: 20px;
+    }
+    .pc_con3_btn{
+        position: absolute;
+        top: 43%;
+        right: 9%;
+        filter: drop-shadow(2px 2px 2px rgb(78, 78, 78));
+    }
+
+    /*pc공지사항 호버 효과주기*/
+    .pc_notice_tmi_box:hover{
+        scale: 1.01;
+        border-right: 5px solid #707070;
+        border-bottom: 5px solid #707070;
+        box-shadow:2px 2px 2px #969393;
+    }
+
+
+    /*con4 온라인 문화*/
+    .youtube_box{display: none;}
+    .wrap .con4 .name{
+        width: 90%; height: 40px;
+        margin: 0;
+        padding: 0%;
+        margin-top: 40px;
+        margin-bottom: 100px;
+    }
+    .wrap .con4 .name p{
+        margin: 0%;
+        padding: 0;
+    }
+    .wrap .con4{
+        display: block;
+        width: 100%; height: 900px;
+        margin: 0;
+        margin-bottom: 50px;
+        padding: 0;
+        background-color: white;
+        box-sizing: border-box;
+
+        position: relative;
+    }
+    .wrap .con4 .pc_youtube_box{
+        display: block;
+        width: 70%; height: 90%;
+        margin: 0 15%;
+        box-sizing: border-box;
+
+        position: absolute;
+    }
+    .con4 .pc_youtube_box .pc_youtube_main{
+        width: 50%; height: 88%;
+        display: block;
+        float: left;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 2px 3px 5px #746e6a;
+        background-color: #d8d8d894;
+    }
+    .con4 .pc_youtube_box .pc_youtube_main .pc_youtube_main_txt{
+        width: 100%; height: 26%;
+    }
+    .con4 .pc_youtube_box .pc_youtube_main .pc_youtube_main_txt p{
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 7px;
+    }
+
+    .con4 .pc_youtube_box .pc_youtube_con_box{
+        display: block;
+        width: 45%; height: 100%;
+        float: right;
+    }
+    .con4 .pc_youtube_con_box .pc_youtube_con_inbox{
+        width: 100%; height: 30%;
+        margin-bottom: 3%;
+        text-align: center;
+    }
+    .con4 .pc_youtube_con_box .pc_youtube_con_inbox img{
+        float: left;
+        width: 45%; height: 79%;
+        border-radius: 20px;
+    }
+    .con4 .pc_youtube_con_box .pc_youtube_con_inbox img:first-child{
+        margin-right: 5%;
+
+    }
+    .con4 .pc_youtube_con_box .pc_youtube_con_inbox:last-child{
+        margin-bottom: 0;
+    }
+    .con4 .pc_youtube_con_box .pc_youtube_con_inbox a{
+        position: relative;
+        box-sizing: border-box;
+        text-align: center;
+        width: 100%; height: 100%;
+        margin: 0 auto;
+    }
+    .con4 .pc_youtube_con_box .pc_youtube_con_inbox a p{
+        display: none;
+    }
+    .con4 .pc_youtube_con_box .pc_youtube_con_inbox p button{
+        margin-top: 5px;
+        padding: 5px;
+        border-radius: 50px;
+        border: 1px solid #707070;
+        cursor: pointer;
+    }
+    /*유튜브 작은 콘텐츠 호버 효과 주기*/
+    .con4 .pc_youtube_con_box .pc_youtube_con_inbox img:hover{
+        scale: 1.01;
+        box-shadow: 2px 3px 5px #746e6a;
+    }
+
+
+
+
+    /*웹진*/
+    /*서브타이틀명 마진정렬 안되서 con5부분만 재정렬*/
+    .con5 .sub_tittle{margin-right: 50px;}
+
+    .con5{
+        background-image: url(./img/pc_con5_bg.png);
+    }
+    /*웹진*/
+
+    /*d아트거래소*/
+    /*con6 컨텐츠6번 - 뉴아트마켓거래소 */
+    .con6{
+        width: 100%; height: 800px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .con6 .art_deals{
+        text-align: center;
+        width: 80%; height: 600px;
+        margin: 0% 10%;
+        margin-top: 2%;
+    }
+    .con6 .art_deals .art_deal_boxing{
+        float: left;
+    }
+
+    .con6 .art_deal_box{
+        /*섹션사이즈의 위드 100%라는 뜻
+        이렇게 하니까 좌우 정렬이 똑바로 됨
+        픽셀단위로 하니까 기기마다 좌우 정렬 지맘대로 됨*/
+        width: 29.3%; height: 200px;
+        border: 1px solid #707070;
+        border-radius: 21px;
+        margin-right: 3.3%;
+    }
+    .con6 .art_deal_box:hover{
+        box-shadow: 2px 3px 5px rgb(152, 152, 152);
+    }
+
+    .con6 .art_deals .art_deal_box_margin{
+        margin-right: 0%;
+    }
+    /*뉴아트거래소 컨텐츠 (이름부분)*/
+    .con6 .art_deal_name{
+        height: 40px;
+        border-bottom: 2px solid #707070;
+        font-size: 14px;
+        overflow: hidden;
+    }
+    .con6 .art_deal_box:hover .art_deal_name{
+        background: #2331B4;
+        border-radius: 19px 19px 0px 0px;
+    }
+    .con6 .deal_exchange_box:hover .art_deal_name{
+        background-color: #188A5C;
+    }
+    .con6 .art_deal_box:hover .art_deal_name p:first-child{
+        color: white;
+        font-weight: 500;
+    }
+    .con6 .art_deal_box .art_deal_name p:first-child{
+        float: left;
+        margin-top: 1.8%;
+        margin-left: 5%;
+        font-size: 18px;
+        font-weight: bold;
+        color: #2331B4;
+    }
+    .con6 .deal_exchange_box .art_deal_name p:first-child{
+        color: #188A5C;
+    }
+    .con6 .art_deal_box .art_deal_name p:last-child{
+        float: right;
+        margin-top: 1.4%;
+        margin-right: 5%;
+        background-color: #269F97;
+        padding: 5px;
+        border-radius: 12px;
+        color: white;
+    }
+    .con6 .deal_close_box{
+        background-color: #dbdbdb;
+    }
+    .con6 .deal_close_box:hover .art_deal_name{
+        background-color: #dbdbdb;
+    }
+    .con6 .deal_close_box .art_deal_name p:first-child{
+        color: #5E706E;
+    }
+    .con6 .deal_close_box:hover .art_deal_name p:first-child{
+        color: #5E706E;
+    }
+    .con6 .deal_close_box .art_deal_name p:last-child{
+        background-color: #5E706E;
+    }
+
+    /*뉴아트거래소 컨텐츠 (컨텐츠부분)*/
+    .art_deal_cnts_box{
+        text-align: center;
+        display: flex;
+    }
+    .art_deal_cnts_box .art_deal_img{
+        float: left;
+        width: 39%;
+        margin: 6% 1%;
+    }
+    .art_deal_cnts_box .art_deal_text{
+        width: 58%;
+        float: right;
+        text-align: left;
+        margin-left: 3px;
+        font-size: 13px;
+    }
+    .art_deal_cnts_box .art_deal_text p:first-child{
+        font-weight: bold;
+        margin: 10px 0;
+        margin-top: 20px;
+        font-size: 15px;
+
+        /* 말줄임 적용 */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+
+    /*태블릿 버전 부터 보인다.*/
+    .art_deal_box_table_pc{display: block;}
+
+
+
+    /* con6 end!*/
+    /*아트거래소*/
+
+
+    /*footer*/
+    .footer{display: none;}
+    .pc_footer{
+        display: block;
+        background-color: #303030;
+        margin-top: 7%;
+        width: 100%;
+
+        position: relative;
+    }
+    /*12.10 수정 - 푸터사이즈를 퍼센트로 변경함으로써
+    1980px에서만 완벽하게 적용되던 푸터형태가
+    반응형 웹사이트 이용시에도 
+    도큐먼트 사이즈가 제각각이어도 어긋나지 않고 적용됨.*/
+    .pc_footer_bg{
+        width: 80%;
+        margin: 0 auto;
+    }
+    /*12.10수정 사항 끝*/
+
+    .pc_footer_box{
+        width: 100%; height: 300px;
+    }
+
+    /*푸터 상단*/
+    .pc_footer_top{
+        width: 100%; height: 100px;
+        border-bottom: 2px solid #999999ab;
+        display: flex;
+        text-align: center;
+    }
+    .pc_footer_top_logo_box{
+        width: 26%; 
+        margin-top: 11px;
+    }
+    .pc_footer_top_logo_box img{
+        width: 250px; height: 39px;
+        float: left;
+        margin-left: 5%;
+        margin-top: 5%;
+    }
+
+    .pc_footer_top_job_box{
+        width: 74%; 
+    }
+    .pc_footer_top_job_box ul{
+        float: right;
+        margin-right: 1%;
+        margin-top: 2.5%;
+    }
+    .pc_footer_top_job_box ul li{
+        float: left;
+        margin-left: 20px;
+    }
+    .pc_footer_top_job_box ul .news_letter{
+        width: 200px; height: 50px;
+        background-color: #FFBE49;
+        border-radius: 6px;
+        line-height: 50px;
+    }
+    .pc_footer_top_job_box ul .p_site{
+        width: 180px; height: 40px;
+        border-radius: 20px;
+        border: 1px solid #707070;
+        background-color: #CCCCCC;
+        line-height: 40px;
+    }
+    /*-----*/
+
+    /*푸터 하단*/
+    .pc_footer_btm{
+        width: 100%; height: 186px;
+        color: rgba(255, 255, 255, 0.767);
+        font-weight: bold;
+        display: flex;
+    }
+    .pc_footer_btm_p_box{
+        width: 68%; 
+        margin-left: 1%;
+        margin-top: 2%;
+    }
+    .pc_footer_btm_p_box .ft_ul_top{
+        width: 100%;
+        float: left;
+    }
+
+    .pc_footer_btm_p_box .ft_ul_top ul{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .pc_footer_btm_p_box .ft_ul_top ul li{
+        float: left;
+        border-left: 2px solid white;
+        line-height: 11px;
+        margin: 0 0 5px 5px;
+    }
+    .pc_footer_btm_p_box .ft_ul_top ul li:first-child{
+        border-left: none;
+        margin: 0 0
+    }
+    .pc_footer_btm_p_box p{
+        width: 100%;
+        float: left;
+    }
+    .pc_footer_btm_p_box p:last-child{
+        margin-top: 30px;
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    .pc_footer_btm_logo_box{
+        width: 32%; 
+        float: right;
+        text-align: center;
+        margin-left: 50px;
+    }
+    .pc_footer_btm_logo_box .btm_logo_box_Sort_box{
+        width: 100%; 
+        text-align: center;
+    }
+    .pc_footer_btm_logo_box .btm_logo_box_Sort_box:first-child img{
+        margin-top: 20px;
+        margin-left: 7px;
+    }
+    .pc_footer_btm_logo_box .btm_logo_box_Sort_box:last-child{
+        margin-top: 10px;
+    }
+    /*.pc_footer_btm_logo_box .btm_logo_box_Sort_box:first-child p{
+        margin-left: 100px;
+        display: inline-block;
+    }
+    .pc_footer_btm_logo_box .btm_logo_box_Sort_box .sort{
+        float: right;
+        margin-right: 50px;
+        margin-bottom: 3%;
+    }*/
+    .pc_footer_btm_logo_box .btm_logo_box_Sort_box:last-child img{
+        margin-right: 25px;
+    }
+    /*-----*/
+
+    /*탑버튼*/
+    .pc_top{  
+    width: 60px; height: 52px;
+    border: 2px solid #707070;
+    background-color: #9B8F8F;
+    filter: drop-shadow(2px 2px 2px rgb(71, 71, 71));
+    border-radius: 100px;
+    top: 20%; right: 3%;
+    font-size: 18px;
+    padding-top: 7px;
+    
+    line-height: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+
+    position: absolute;
+    top: 7%;
+    }
+
+    .pc_top p{
+        color: white;
+    }
+
+
+    }
+
+
+</style>
+
+
+
+<body>
+
+     <!-- 햄버거 버튼 체크 박스 만들기 -->
+     <input type="checkbox" id="gnb_chk">
+     <label class="open" for="gnb_chk">
+        <img src="./img/bars-solid.png" alt="">
+     </label>
+    
+    <label class="close" for="gnb_chk">
+        <img src="./img/xmark-solid.png" alt="">
+    </label>
+     <!-- 인풋 타입 체크박스 아이디 정하기 -->
+
+     <input type="checkbox" id="menu_01_chk">
+
+    <header class="header">
+
+        <!-- pc버전 메뉴 추가-->
+        <div class="pc_gnb">
+            <ul>
+                <li><a style="color: white; font-weight: bold;" href="https://www.sfac.or.kr/mbr/
+                    login/loginPage.do">로그인</a></li>
+                <li><a style="color: white; font-weight: bold;" href="https://www.sfac.or.kr/mbr/
+                    join/joinPage.do">회원가입</a></li>
+                <li><a style="color: white; font-weight: bold; cursor: pointer;">▾ENG</a></li>
+                <li><i class="fa-solid fa-magnifying-glass"></i></li>
+            </ul>
+        </div>
+
+        <!-- pc lnb 시작! -->
+        <nav class="pc_lnb">
+            <div class="logo">
+                <a href="sub_page.html"><img src="./img/main_pc_logo.png" alt=""></a>
+            </div>
+            <ul>
+                <li class="pc_btn_menu">사업소개</li>
+
+                <li class="pc_btn_menu">예술인 공간</li>
+
+                <li class="pc_btn_menu">공연,전시,지역문화</li>
+
+                <li class="pc_btn_menu">공간소개</li>
+
+                <li class="pc_btn_menu">열린광장</li>
+
+                <li class="pc_btn_menu">정보공유</li>
+            </ul>
+
+            <div class="pc_list_menu_box">
+            <div class="pc_list_menu">
+                <ul class="lnb_main">
+                    <p>사업 소개 |</p>
+                    <p class="pc_lnb_sub_name">서울문화재단이 진행하는
+                        주요 사업들을 소개합니다.</p>
+                    <li>
+                        <img style="width: 138px;" src="img/img_site06.png" alt="">
+                    </li>
+                    
+                </ul>
+                
+                <ul class="lnb_main">
+                    <p>예술지원</p>
+                    <li><a href="sub_page.html">예술창작활동지원</a></li>
+                    <li><a href="sub_page.html">청년예술지원</a></li>
+                    <li><a href="sub_page.html">원로예술지원</a></li>
+                    <li><a href="sub_page.html">창작공간 입주공모</a></li>
+                    <li><a href="sub_page.html">예술지원선정자 검색</a></li>
+                    <li><a href="sub_page.html">예술지원 자료실</a></li>
+                </ul>
+
+                <ul class="lnb_main">
+                    <p>예술교육</p>
+                    <li><a href="sub_page.html">운영체계 +</a></li>
+                    <li><a href="sub_page.html">학교예술교육 +</a></li>
+                    <li><a href="sub_page.html">사회 문화예술교육</a></li>
+                    <li><a href="sub_page.html">예술교육 거점 공간</a></li>
+                    <li><a href="sub_page.html">서울형 예술교육 확산</a></li>
+                    <li><a href="sub_page.html">예술교육 정보플랫폼</a> </li>
+                </ul>
+                <ul class="lnb_main">
+                    <p>시민문화</p>
+                    <li><a href="sub_page.html">시민문화 사업소개</a></li>
+                    <li><a href="sub_page.html">지역문화 +</a></li>
+                    <li><a href="sub_page.html">생활문화 +</a></li>
+                    <li><a href="sub_page.html">축제 +</a></li>
+                    <li><a href="sub_page.html">거리예술,서커스 +</a></li>
+                </ul>
+                <ul class="lnb_main">
+                    <p>제휴·정책·교류</p>
+                    <li><a href="sub_page.html">예술제휴 +</a></li>
+                    <li><a href="sub_page.html">문화정책 개발 +</a></li>
+                    <li><a href="sub_page.html">광역문화재단 네트워크</a></li>
+                    <li><a href="sub_page.html">세계도시문화포럼_WCCF</a></li>
+                    <li><a href="sub_page.html">문화정책패널 및 문화향유</a></li>
+                    <li><a href="sub_page.html">실태조사</a></li>
+                </ul>
+                <ul class="lnb_main">
+                    <p><a href="https://www.sfac.or.kr/site/SFAC_KOR/
+                        12/11211000000002022033003.jsp">서울 스테이지11</a></p><br>
+                    <p><a href="https://www.sfac.or.kr/site/SFAC_KOR/
+                        12/11212000000002022051201.jsp">서울예술희망캠페인</a></p><br>
+                    
+                </ul>
+            </div>
+        </div>
+        </nav> 
+        
+        <!-- pc엘엔비 -->
+        <!-- <nav class="lnb">
+            <div class="btn_menu">메뉴</div>
+                <ul>
+                    <li>menu01</li>
+                    <li>menu02</li>
+                    <li>menu03</li>
+                    <li>menu04</li>
+                    <li>menu05</li>
+                </ul>
+                <div class="list_menu">
+                    Full_down_Menu
+                </div>
+        </nav> -->
+        <!-- pc엘엔비 -->
+
+
+        <div class="lnb">
+            <div class="logo">
+                <a href="sub_page.html"><img src="./img/main_logo_ss.png" alt=""></a>
+            </div>
+            <div class="logos">
+                <a href="sub_page.html"><img src="./img/main_logo_tablet.png" alt=""></a>
+            </div>
+            <div class="eng">▾ ENG</div>
+
+            <!-- 햄버거버튼 -->
+            <label for="gnb_chk" class="btn_gnb"></label>
+            <!-- 라벨 만들어주기 위의 아이디와 클래스 이름 만들기 -->
+            <!-- 햄버거버튼 -->
+            <label for="gnb_xchk" class="btn_xgnb"></label>
+            <!-- 라벨 만들어주기 위의 아이디와 클래스 이름 만들기 -->
+
+        </div>
+    <!-- Swiper -->
+
+    <!-- visual_main 모바일, 태블릿 버전용 -->
+    <div class="visual_main_box">
+    <div class="visual_main_swiper swiper visualSwiper">
+
+        <div class="visual_contents swiper-wrapper">
+          <div class="visual_slide swiper-slide">
+            <a href="https://www.sfac.or.kr/participation/
+            sfac_program.do?mode=VIEW&eduScheSeq=&eduMstSeq
+            =31783&progTypeCd=&mvnIdx=&step=">
+            <img src="./img/main_visual_01.png" alt="비주얼메인1">
+            </a>
+          </div>
+          <!-- 비주얼메인 포스터1번 끝! -->
+
+          <div class="visual_slide swiper-slide">
+            <a href="https://www.sfac.or.kr/stage11/
+            calendarDetail.do?eduGubunSel=&mode=&eduMstSeq=32092">
+            <img src="./img/main_visual_02.png" alt="비주얼메인2">
+            </a>
+          </div>
+          <!-- 비주얼메인 포스터2번 끝! -->
+
+          <div class="visual_slide swiper-slide">
+            <a href="https://www.sfac.or.kr/participation/
+            sfac_program.do?mode=VIEW&eduScheSeq=&eduMstSeq=
+            31690&progTypeCd=&mvnIdx=&step=">
+            <img src="./img/main_visual_03.png" alt="비주얼메인3">
+            </a>
+          </div>
+          <!-- 비주얼메인 포스터3번 끝! -->
+
+        </div>
+        <!-- visual_contents -->
+        
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        
+    </div>
+    <!-- visual_main_swiper end! -->
+    
+    <br>
+    <span class="visual_name">서울문화재단이 추천하는 전시 </span>
+    
+    </div>
+    <!-- visual_main_box 모바일, 태블릿 버전용 end! -->
+
+    <!-- ------------------------------------------- -->
+    <!-- 비주얼 메인 PC부분 -->
+           <!--1. 배너박스를 만든다 -->
+           <section class="banner_box">
+
+            <!-- 2. 배너를 만든다. -->
+            <div class="banner">
+                <!-- 3. 프레임을 만든다. -->
+                <div class="frame">
+                    <ul class="pc_visual_main_ul">
+                        
+                        <li class="con11"><a class="a visual_con1" href="">
+                            <div class="con1_box">
+                            <div class="pc_visual_main_img_box">
+                                <img src="./img/main_visual_01.png" alt="pc버전 메인비주얼01">
+                            </div>
+                            <div class="pc_visual_main_txt_box con1_txt">
+                                <div class="txt_boxing">
+                                <span class="ctgry_con1">&nbsp;공연&nbsp;</span><br>
+                                <p class="cnts_name">[2022 예술창작활동지원사업 선정작] 박혜수 개인전 모노포비아-외로움 공포증</p>
+                                <p class="date">접수기간<br> 2022-09-14 ~ 2022-11-26</p>
+                                <p class="locat">장소<br> 아트센터 예술의시간(서울특별시 금천구 범안로9길 23)</p>
+                                </div> 
+                                <!-- txt_boxing -->
+                            </div>
+                            <!-- pc_visual_main_txt_box -->
+                        </div>                        
+                        </a></li>
+                        <!-- 컨텐츠 1번 끝 -->
+                        
+                        <li class="con22"><a class="a visual_con2" href="">
+                            <div class="pc_visual_main_img_box">
+                                <img src="./img/pc_visual_main_img02.jpg" alt="pc버전 메인비주얼02">
+                            </div>
+                            <div class="pc_visual_main_txt_box con2_txt">
+                                <div class="txt_boxing">
+                                <span class="ctgry_con1">&nbsp;&nbsp;공연&nbsp;&nbsp;</span><br>
+                                <p class="cnts_name">[2022 비넥스트 페스티벌] 허벅지에서 줄기까지</p>
+                                <p class="date">접수기간<br> 2022-11-13 ~ 2022-11-25</p>
+                                <p class="locat">장소<br> 문래예술공장 갤러리M30 (서울시 영등포구 경인로 88길 5-4)</p>
+                                </div> 
+                                <!-- txt_boxing -->
+                            </div>
+                            <!-- pc_visual_main_txt_box -->                        
+                        </a></li>
+                        <!-- 컨텐츠 2번 끝 -->
+
+                        <li class="con33"><a class="a visual_con3" href="">
+                            <div class="pc_visual_main_img_box">
+                                <img src="./img/pc_visual_main_img03.jpg" alt="pc버전 메인비주얼02">
+                            </div>
+                            <div class="pc_visual_main_txt_box con3_txt">
+                                <div class="txt_boxing">
+                                <span class="ctgry_con1">&nbsp;&nbsp;전시&nbsp;&nbsp;</span><br>
+                                <p class="cnts_name">[2022 비넥스트 페스티벌] Diluvial</p>
+                                <p class="date">접수기간<br> 2022-12-02 ~ 2022-12-20</p>
+                                <p class="locat">장소<br> 문래예술공장 박스씨어터 (서울시 영등포구 경인로 88길 5-4)</p>
+                                </div> 
+                                <!-- txt_boxing -->
+                            </div>
+                            <!-- pc_visual_main_txt_box -->                        
+                        </a></li>
+                        <!-- 컨텐츠 3번 끝 -->
+                        
+
+                    </ul>
+                </div>
+                <!-- 프레임 끝 -->
+                <div class="swiper-pagination_box">
+                    <div class="swiper-pagination"></div>
+                    </div>    
+                    <!-- swiper-pagination_box -->
+                    </div>
+            
+            </div>
+            <!-- 배너 끝 -->
+    
+            <!-- 재생 정지 버튼  -->
+            <div class="ctr_btn">
+                <a href="#" class="play"><img src="./img/2-images/play.jpg" alt="play"></a>
+                <a href="#" class="stop"><img src="./img/2-images/stop.jpg" alt="stop"></a>
+            </div>
+            <!-- 재생 정지 버튼 끝 -->
+    
+            <!-- 좌우 이동 버튼 -->
+            <div class="btn">
+                <a href="#" class="left"><img style="width: 37px; height: 37px;" src="./img/2-images/l_btn.png" alt="prev"></a>
+                <a href="#" class="right"><img style="width: 37px; height: 37px;" src="./img/2-images/r_btn.png" alt="next"></a>
+            </div>
+            <!-- 좌우 이동 버튼 끝 -->
+    
+        </section>
+        <!-- 섹션 끝! -->
+    
+ 
+
+    <!-- 비주얼 메인 PC부분 끝!-->
+    <!-- ------------------------------------------- -->
+
+
+    </header> <!-- header end! -->
+
+    <ul class="gnb">
+
+        <li class="all_menu">전체메뉴</li>
+
+        <li class="search">
+            <input class="search_box" type="text" placeholder="찾으시는 검색어를 입력해주세요.  ">
+        </li>
+
+        <div class="join_box">
+        <li class="join">
+            <img src="./img/ico_log.png" alt=""><a href="https://www.sfac.or.kr/mbr/login/loginPage.do"> 로그인</a></li>
+        <li class="join">
+            <img src="./img/ico_join.png" alt=""><a href="https://www.sfac.or.kr/mbr/join/joinPage.do"> 회원가입</a></li>
+        </div>
+
+        <ul class="menu_tittle" id="menu">
+        <li class="menu_01 menus">
+            <div class="menu_01_sub_01 menuss">사업소개</div>
+            <ul class="sub_menu_open">
+
+                <li class="sub_menus ui-widget-header"><div>예술지원</div></li>
+                <li class="sub_menu_more"><div><a href="https://www.sfac.or.kr/site/SFAC_KOR/12/11202220000002022092210.jsp">
+                    예술창작활동지원</a></div></li>
+                <!--  -->
+                <li class="sub_menu_more"><div><a href="https://www.sfac.or.kr/site/SFAC_KOR/12/11202230000002022092210.jsp">
+                     청년예술지원</a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div>예술교육</div></li>
+                <li class="sub_menu_more"><div><a href="https://www.sfac.or.kr/site/SFAC_KOR/10/11003010100002020110204.jsp">
+                    가치 및 미션, 운영체계</a></div></li>
+                <!--  -->
+                <li class="sub_menu_more"><div><a href="https://www.sfac.or.kr/site/SFAC_KOR/03/10303020100002018102304.jsp">
+                    학교예술교육 사업소개</a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div>시민문화</div></li>
+                <li class="sub_menu_more"><div><a href="https://www.sfac.or.kr/site/SFAC_KOR/11/11104030000002021111201.jsp">
+                    시민문화 사업소개</a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div>생활문화</div></li>
+                <li class="sub_menu_more"><div><a href="https://www.sfac.or.kr/site/SFAC_KOR/03/10305010000002018102304.jsp">
+                    생활문화 사업소개</a></div></li>
+                <li class="sub_menu_more"><div><a href="https://www.sfac.or.kr/site/SFAC_KOR/12/11204032100002022071409.jsp">
+                    서울생활예술페스티벌</a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div>예술제휴·정책·교류</div></li>
+                <li class="sub_menu_more"><div><a href="https://www.sfac.or.kr/site/SFAC_KOR/03/10306010100002018102304.jsp#none">
+                    예술제휴 및 메세나 사업소개</a></div></li>
+                <li class="sub_menu_more"><div><a href="https://www.sfac.or.kr/site/SFAC_KOR/03/10306020100002018102305.jsp">
+                    문화정책 개발 및 기획사업 소개</a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/site/SFAC_KOR/12/11211000000002022033003.jsp">
+                    <p>서울 스테이지11</p> </a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/site/SFAC_KOR/12/11212000000002022051201.jsp">
+                    <p>서울예술인희망캠페인</p> </a></div></li>
+                <!--  -->
+
+            </ul>
+        </li>
+        <!-- 메뉴1번 사업소개 끝 -->
+
+        <li class="menu_02 menus">
+            <div class="menu_02_sub_02 menuss">예술인공간</div>
+            <ul class="sub_menu_open">
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/participation/participation/artspace_project.do">
+                    <p>지원사업 공모</p> </a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/participation/participation/artspace_movein.do">
+                    <p>입주작가 공모</p> </a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/opensquare/notice/support_list.do">
+                    <p>공모 안내</p> </a></div></li>
+                <!--  -->
+
+            </ul>
+        </li>
+        <!-- 메뉴2번 예술인공간 끝 -->
+
+        <li class="menu_03 menus">
+            <div class="menu_03_sub_03 menuss">공연,전시,지역문화</div>
+            <ul class="sub_menu_open">
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/participation/sfac_program.do">
+                    <p>프로그램 신청</p> </a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/participation/sfac_program.do">
+                    <p>공간대관 신청</p> </a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/participation/artsnet/sfac_calender.do?searchGubun=A">
+                    <p>오늘의 재단</p> </a></div></li>
+                <!--  -->
+
+            </ul>
+        </li>
+        <!-- 메뉴3번 공연,전시,지역문화 끝 -->
+
+        <li class="menu_04 menus">
+            <div class="menu_04_sub_04 menuss">공간소개</div>
+            <ul class="sub_menu_open">
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/site/SFAC_KOR/02/10227000000002018102507.jsp">
+                    <p>창작공간</p> </a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/artspace/artspace/geumcheon_main.do">
+                    <p>금천예술공장</p> </a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/artspace/artspace/mullae_main.do">
+                    <p>문래예술공장</p> </a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/artspace/artspace/blackbox_main.do">
+                    <p>대학로극장 쿼드</p> </a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/artspace/artspace/samilro_main.do">
+                    <p>삼일로창고극장</p> </a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/artspace/artspace/seogyo_main.do">
+                    <p>서교예술실험센터</p> </a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/artspace/artspace/streetArts_main.do">
+                    <p>서서울예술교육센터</p> </a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/artspace/artspace/seogyo_main.do">
+                    <p>서울거리예술창작센터</p> </a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/artspace/artspace/dance_main.do">
+                    <p>서울무용센터</p> </a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/artspace/artspace/play_main.do">
+                    <p>서울연극센터</p> </a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/artspace/artspace/artsedu_main.do">
+                    <p>서울예술교육센터</p> </a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/artspace/artspace/jamsil_main.do">
+                    <p>서울장애예술창작센터</p> </a></div></li>
+                <!--  -->
+
+                <li class="sub_menus ui-widget-header"><div><a href="https://www.sfac.or.kr/artspace/artspace/citizenhall_main.do">
+                    <p>시민청</p> </a></div></li>
+                <!--  -->
+
+            </ul>
+        </li>
+        <!-- 메뉴4번 공간소개 끝 -->
+        
+        <li id="menu_05">열린광장</li>
+        <li id="menu_06">정보공유</li>
+        <li id="menu_07">부조리통합신고</li>
+        <li id="menu_08">인권침해구제안내</li>
+        </ul>
+        
+    </ul>
+    <!-- 1024px전까지의 햄버거버튼에 담길 gnb -->
+
+    <div class="icon_box">
+        <div class="icon_01 icon">
+            <a href="https://sfac.or.kr/stage11/main.do">
+                <img class="icon_img" src="./img/main_icon_01.png" alt="서울스테이지11"></a>
+            <br> 서울스테이지11 
+        </div>
+
+        <div class="icon_02 icon">
+            <a href="https://www.quad.or.kr/Home/Main">
+                <img class="icon_img" src="./img/main_icon_02.png" alt="대학로극장쿼드"></a>
+            <br> 대학로극장쿼드
+        </div>
+
+        <div class="icon_03 icon">
+            <a href="https://artseduta.sfac.or.kr/html/main/index.asp">
+                <img class="icon_img" src="./img/main_icon_03.png" alt="서울예술교육"></a>
+            <br> 서울예술교육
+        </div>
+
+        <div class="icon_04 icon">
+            <a href="http://localtoseoul.or.kr/">
+                <img class="icon_img" src="./img/main_icon_04.png" alt="자치구문화재단"></a>
+            <br> 자치구문화재단
+        </div>
+
+        <div class="icon_05 icon">
+            <a href="https://scas.kr/scas"><img class="icon_img" src="./img/main_icon_05.png" alt="예술지원시스템"></a>
+            <br> 예술지원시스템
+        </div>
+
+        <div class="icon_06 icon">
+            <a href="https://www.sfac.or.kr/archive/main.do">
+                <img class="icon_img" src="./img/main_icon_06.png" alt="아카이브"></a>
+            <br> 아카이브
+        </div>
+       
+    </div>
+
+    <div class="wrap">
+
+        <div class="contents_01 con1 con">
+
+            <div class="name con1_name">오늘의 공연전시
+                <p>공연보러가자! 골라보는 재미나는 오늘</p>
+                <a href="https://www.sfac.or.kr/participation/sfac_program.do">
+                <img src="./img/pc_con1_btns.png" alt=""></a>
+            </div>
+            <p class="sub_tittle">공연보러가자! 골라보는 재미나는 오늘</p>
+
+            <!-- pc버전 콘텐츠 -->
+            <div class="pc_con1_box">
+                <div class="pc_con1_in_box">
+                    <div class="pc_con1_main_con_box">
+                        <div class="pc_con1_main_con">
+                            <div class="pc_con1_main_con_img_box">
+                            <img class="hover_off" src="./img/pc_con1_main.png" alt="pc버전메인콘텐츠">
+                            <img class="hover_on" src="./img/con1_pc_main_hover.png" alt="pc버전메인콘텐츠">
+                            <div class="hover_txt">
+                                <p>[모집] &lt;2022 서울예술교육센터 
+                                    아츠포틴즈 <br> 가을 시즌 프로젝트&gt; 
+                                    참여 청소년을 모집합니다.</p>
+                                <p>장소 :서울예술교육센터 아츠포틴즈</p>
+                                <p>문의처 :서울예술교육센터(02-3785-3199)</p>
+                                <p>선정기준 :선착순</p>
+                                <p>대상 :14세~19세 청소년</p>
+                                <button><a href="https://www.sfac.or.kr/participation/
+                                    sfac_program.do?eduGubunSel=
+                                    &pageIndex=7&eduMstSeq=31846&
+                                    eduScheSeq=&mode=VIEW&mstStatus=">더보기</a>
+                                </button>
+                            </div>
+                            </div>
+                            <div class="pc_con1_ctgry_box">
+                            <span class="ctgry_con1">예술교육워크숍</span>
+                            <p class="cnts_name">[모집]2022 서울예술교육센터 아츠포틴즈 
+                                <br>가을 시즌 프로젝트</p>
+                            <p>대상 : 14세~19세 청소년</p>  
+                            <p>장소 :서울예술교육센터 아츠포틴즈</p>  
+                            <span class="date">2022-10-05 ~ 2022-10-27</span><br>
+                            </div>    
+                            <!-- pc_con1_ctgry_box -->
+                        </div>
+                    </div>
+                    <div class="pc_con1_jabcon_box">
+                        <div class="pc_con1_jabcon_con_box">
+                            <div class="pc_jabcon_123456">
+                                <a href="https://www.sfac.or.kr/participation/
+                                sfac_program.do?eduGubunSel=&pageIndex=
+                                4&eduMstSeq=31998&eduScheSeq=&mode=VIEW&
+                                mstStatus=STA03"><img src="./img/pc_con1_sub1.png" alt=""></a>
+                                <div class="pc_con1_ctgry_box">
+                                    <span class="ctgry_con1">예술교육워크숍</span><br>
+                                    <span class="cnts_name">2022 서울예술교육랩 &lt;질문의 진화 &gt; 오픈 토크#2. "예술교육의 미래를 위한 협력과 연결"</span><br>
+                                    <span class="date">2022-10-05 ~<br>
+                                        2022-10-27</span><br>
+                                        서울문화재단 유튜브 스팍TV <br>
+                                    </div>    
+                                    <!-- pc_con1_ctgry_box -->
+                            </div>
+                            <div class="pc_jabcon_123456">
+                                <a href="https://www.sfac.or.kr/participation/
+                                sfac_program.do?eduGubunSel=&pageIndex=
+                                6&eduMstSeq=31887&eduScheSeq=&mode=VIEW&mstStatus=">
+                                <img src="./img/pc_con1_sub2.png" alt=""></a>
+                                <div class="pc_con1_ctgry_box">
+                                    <span class="ctgry_con1">예술교육워크숍</span><br>
+                                    <span class="cnts_name">2022 서울예술교육랩 질문의 진화</span><br>
+                                    <span class="date">2022-10-05 ~<br>
+                                        2022-10-27</span><br>
+                                        프로그램별 상이 <br>
+                                    </div>    
+                                    <!-- pc_con1_ctgry_box -->
+                            </div>
+                            <div class="pc_jabcon_123456">
+                                <a href="https://www.sfac.or.kr/participation/
+                                sfac_program.do?eduGubunSel=&pageIndex=
+                                7&eduMstSeq=31844&eduScheSeq=&mode=
+                                VIEW&mstStatus=">
+                                <img src="./img/pc_con1_sub3.png" alt=""></a>
+                                <div class="pc_con1_ctgry_box">
+                                    <span class="ctgry_con1">예술교육워크숍</span><br>
+                                    <span class="cnts_name">2022 서커스 점핑업 (그룹 아크로바틱의 이해와 실험) 참가자 공개모집</span><br>
+                                    <span class="date">2022-09-26 ~<br>
+                                        2022-10-04</span><br>
+                                        서울거리예술창작센터 1취수장 메인홀 <br>
+                                    </div>    
+                                    <!-- pc_con1_ctgry_box -->
+                            </div>
+                        </div>
+                        <div class="pc_con1_jabcon_con_box">
+                            <div class="pc_jabcon_123456">
+                                <a href="https://www.sfac.or.kr/participation/
+                                sfac_program.do?eduGubunSel=&pageIndex=
+                                4&eduMstSeq=32010&eduScheSeq=&mode=VIEW&mstStatus=">
+                                <img src="./img/pc_con1_sub4.png" alt=""></a>
+                                <div class="pc_con1_ctgry_box">
+                                    <span class="ctgry_con1">예술교육워크숍</span><br>
+                                    <span class="cnts_name">2022 창작공간 가을시즌제 연희문학창작촌 '소설가와 사회학자의 대화'</span><br>
+                                    <span class="date">2022-11-01 ~<br>
+                                        2022-11-15</span><br>
+                                        서울문화재단 대학로센터 2층 아고라 & '스팍TV/한국사회학회' 유튜브 온라인 생중계 <br>
+                                    </div>    
+                                    <!-- pc_con1_ctgry_box -->
+                            </div>
+                            <div class="pc_jabcon_123456">
+                                <a href="https://www.sfac.or.kr/participation/
+                                sfac_program.do?eduGubunSel=&pageIndex=
+                                7&eduMstSeq=31809&eduScheSeq=&mode=
+                                VIEW&mstStatus=">
+                                <img src="./img/pc_con1_sub5.png" alt=""></a>
+                                <div class="pc_con1_ctgry_box">
+                                    <span class="ctgry_con1">공연</span><br>
+                                    <span class="cnts_name">2022 한강노들섬오페라 &lt;마술피리&gt;</span><br>
+                                    <span class="date">2022-09-16 ~<br>
+                                        2022-09-30</span><br>
+                                        한강노들섬 잔디마당 *서울시 용산구 양녕로 445 <br>
+                                    </div>    
+                                    <!-- pc_con1_ctgry_box -->
+                            </div>
+                            <div class="pc_jabcon_123456">
+                                <a href="https://www.sfac.or.kr/participation/
+                                sfac_program.do?eduGubunSel=&pageIndex=
+                                4&eduMstSeq=31999&eduScheSeq=&mode=VIEW&mstStatus=">
+                                <img src="./img/pc_con1_sub6.png" alt=""></a>
+                                <div class="pc_con1_ctgry_box">
+                                    <span class="ctgry_con1">전시</span><br>
+                                    <span class="cnts_name">제1회 서울융합예술페스티벌 언폴드엑스 2022(Unfold X 2022)</span><br>
+                                    <span class="date">2022-11-07 ~<br>
+                                        2022-11-19</span><br>
+                                        융합예술팀 <br>
+                                    </div>    
+                                    <!-- pc_con1_ctgry_box -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- pc버전 콘텐츠 end! -->
+
+            <div class="cnts_box">
+
+            <div class="pc_cnts_boxing">
+            <div class="cnts_boxing">
+                <div class="cnts_01 cnts ctns_m">
+                    <a href="https://www.sfac.or.kr/participation/
+                    sfac_program.do?eduGubunSel=&pageIndex=7&eduMstSeq=31846&eduScheSeq=&mode=VIEW&mstStatus=">
+                    <img src="./img/cnts1_01.jpg" alt="">
+                    <span class="ctgry_con1">예술교육워크숍</span><br>
+                    <span class="cnts_name">2022 서울예술교육랩</span><br>
+                    <span class="date">2022-10-05 ~<br>
+                        2022-10-27</span><br>
+                        서울문화재단 <br>
+                    </a>    
+                </div>
+
+                <div class="cnts_02 cnts ctns_m">
+                    <a href="https://www.sfac.or.kr/participation/
+                    sfac_program.do?eduGubunSel=&pageIndex=5&eduMstSeq=31972&eduScheSeq=&mode=VIEW&mstStatus=">
+                    <img src="./img/cnts1_02.jpg" alt="">
+                    <span class="ctgry_con1">예술교육워크숍</span><br>
+                    <span class="cnts_name">2022 서울예술교육랩</span><br>
+                    <span class="date">2022-10-05 ~<br>
+                        2022-10-27</span><br>
+                        서울문화재단 <br>
+                    </a>    
+                </div> 
+
+                <div class="pc_ctns_box">
+                <div class="pc_ctns pc_cnts_033 cnts">
+                    <a href="https://www.sfac.or.kr/participation/
+                    sfac_program.do?eduGubunSel=&pageIndex=5&eduMstSeq=31967&eduScheSeq=&mode=VIEW&mstStatus=">
+                    <img src="./img/cnts1_02.jpg" alt="">
+                    <span class="ctgry_con1">예술교육워크숍</span><br>
+                    <span class="cnts_name">2022 서울예술교육랩</span><br>
+                    <span class="date">2022-10-05 ~<br>
+                        2022-10-27</span><br>
+                        서울문화재단 <br>
+                    </a>    
+                </div>
+                </div>
+                <!-- pc_ctns_box -->
+            </div>  
+            <!-- cnts_boxing 1,2번 끝 -->
+
+            <div class="cnts_boxing">
+                <div class="cnts_03 cnts ctns_m">
+                    <a href="https://www.sfac.or.kr/participation/
+                    sfac_program.do?eduGubunSel=&pageIndex=5&eduMstSeq=31967&eduScheSeq=&mode=VIEW&mstStatus=">
+                    <img src="./img/cnts1_03.jpg" alt="">
+                    <span class="ctgry_con1">예술교육워크숍</span><br>
+                    <span class="cnts_name">2022 서울예술교육랩</span><br>
+                    <span class="date">2022-10-05 ~ <br>
+                        2022-10-31</span><br>
+                        프로그램별 상이<br>
+                    </a>    
+                </div>
+
+                <div class="cnts_04 cnts ctns_m">
+                    <a href="https://www.sfac.or.kr/participation/
+                    sfac_program.do?eduGubunSel=&pageIndex=4&eduMstSeq=32010&eduScheSeq=&mode=VIEW&mstStatus=">
+                    <img src="./img/cnts1_04.jpg" alt="">
+                    <span class="ctgry_con1">예술교육워크숍</span><br>
+                    <span class="cnts_name">[모집]&lt;2022 서울예..</span><br>
+                    <span class="date">2022-09-20 ~ <br>
+                        2022-10-10</span><br>
+                        프로그램별 상이 <br>
+                    </a>     
+                </div>
+
+            </div>
+            <!-- cnts_boxing 3,4번 끝 --> 
+        </div>    
+        <!--con box end  -->
+        
+
+        
+            <div class="con1_btn_box">
+            <input class="con1_today_more_btn" type="button" value="오늘의 공연 / 전시 더보기 ✚"
+            onClick="location.href='https://www.sfac.or.kr/participation/artsnet/sfac_calender.do?searchGubun=A'">
+            </div>    
+
+
+        </div>
+        <!-- con1 -->
+
+
+        <div class="contents_02 con2 con">
+            <div class="name">예술인 공간
+                <p>예술인을 위한, 예술인을 위한 지원!</p>
+                <a href="https://www.sfac.or.kr/participation/participation/artspace_project.do">
+                    <img src="./img/pc_con2_btn.png" alt=""></a>
+            </div>
+            <p class="sub_tittle">예술인을 위한, 예술인을 위한 지원!</p>
+
+
+            <div class="con2_btn_box_01">
+            <input class="select" type="button" value="지원사업">
+            <input class="select" type="button" value="입주작가">
+            </div>
+            <!-- con2_btn_box_01 -->
+            
+            <!-- Swiper -->
+            <div class="cnts02_swiper swiper mySwiper">
+
+              <div class="swiper-wrapper">
+
+                <div class="cnts02_012 swiper-slide">
+
+                    <a href="https://www.sfac.or.kr/participation/
+                    participation/artspace_project.do?pageIndex=1&firstPageIndex=1&lastPageIndex=&searchSpceCode=&searchSttusCd=&prjIdx=238&step=1&interest1=">
+                    <img src="./img/contents02_01_01.png" alt="">
+
+                    <div class="cnts_02_text">
+                    <span class="ctgry_con1 ctgry_con2">시각</span><br>
+                    <p class="cnts_name cnts_names">[모집]2022 서울예..</p>
+                    <p class="date dates">2022-09-20 ~ <br>
+                         2022-10-10<br>
+                         프로그램별 상이 <br></p>
+                    </div>    
+                    </a>
+                </div>
+                <!-- cnts02_01 end! -->
+
+                <div class="cnts02_012 swiper-slide">
+                    
+                    <a href="https://www.sfac.or.kr/participation/
+                    participation/artspace_project.do?pageIndex=1&firstPageIndex=1&lastPageIndex=&searchSpceCode=&searchSttusCd=&prjIdx=235&step=1&interest1=">
+                    <img src="./img/contents02_01_02.png" alt="">
+
+                    <div class="cnts_02_text">
+                    <span class="ctgry_con1 ctgry_con2">시각</span><br>
+                    <p class="cnts_name cnts_names">[모집]2022 서울예..</p>
+                    <p class="date dates">2022-09-20 ~ <br>
+                         2022-10-10<br>
+                         프로그램별 상이 <br></p>
+                    </div>    
+                    </a>
+                </div>
+                <!-- cnts02_02 end! -->
+
+                <div class="cnts02_03 swiper-slide">
+
+                    <a href="https://www.sfac.or.kr/participation/participation/
+                    artspace_project.do?pageIndex=1&firstPageIndex=1&lastPageIndex=&searchSpceCode=&searchSttusCd=&prjIdx=237&step=1&interest1=">
+                    <img src="./img/contents02_01_03.png" alt="">
+
+                    <div class="cnts_02_text">
+                    <span class="ctgry_con1 ctgry_con2">시각</span><br>
+                    <p class="cnts_name cnts_names">[모집]2022 서울예..</p>
+                    <p class="date dates">2022-09-20 ~ <br>
+                         2022-10-10<br>
+                         프로그램별 상이 <br></p>
+                    </div>    
+                    </a>
+                </div>
+                <!-- cnts02_03 end! -->
+
+                <!-- 컨텐츠 없는 스와이프 숨기기 -->
+                <div class="swiper-slide none"></div>
+                <div class="swiper-slide none"></div>
+
+              </div>
+              <!-- swiper-wrapper end! -->
+
+            </div>
+            <!-- cnts02_swiper end! -->
+
+
+            <div class="pc_con2_box">
+                
+                <div class="pc_con2_123456box">
+                <div class="pc_cnts02 pc_con2_01">
+                    <a href="https://www.sfac.or.kr/participation/
+                    participation/artspace_project.do?pageIndex=1&firstPageIndex=1&lastPageIndex=&searchSpceCode=&searchSttusCd=&prjIdx=238&step=1&interest1=">
+                    <img src="./img/contents02_01_01.png" alt="">
+
+                    <div class="cnts_02_text">
+                    <span class="ctgry_con1 ctgry_con2">시각</span><br>
+                    <p class="cnts_name cnts_names">서울문화재단X도미노피자 &lt;2022 시각예술 신진작가 작품 공모전&gt;</p>
+                    <p class="date dates">2022-09-20 ~ <br>
+                         2022-10-10<br>
+                         제휴협력팀 <br></p>
+                    </div>    
+                    </a>
+                  
+                </div>
+                <!-- cnts02_01 end! -->
+                <div class="pc_cnts02 pc_con2_02">
+                    <a href="https://www.sfac.or.kr/participation/
+                    participation/artspace_project.do?pageIndex=1&firstPageIndex=1&lastPageIndex=&searchSpceCode=&searchSttusCd=&prjIdx=235&step=1&interest1=">
+                    <img src="./img/contents02_01_02.png" alt="">
+
+                    <div class="cnts_02_text">
+                    <span class="ctgry_con1 ctgry_con2">시각</span><br>
+                    <p class="cnts_name cnts_names">2022년 포르쉐 드리머스 온(Dreamers. On) - 서울 미디어아트 프로젝트 &lt;시티 해커스&gt;</p>
+                    <p class="date dates">2022-08-23 ~ <br>
+                        2023-01-31<br>
+                        청년예술팀 <br></p>
+                    </div>    
+                    </a>
+                </div>
+                <!-- cnts02_01 end! -->
+
+            </div>
+            <!-- pc_con2_123456box -->
+
+            <div class="pc_con2_123456box">
+                <div class="pc_cnts02 pc_con2_03">
+                    <a href="https://www.sfac.or.kr/participation/
+                    participation/artspace_project.do?pageIndex=1&firstPageIndex=1&lastPageIndex=&searchSpceCode=&searchSttusCd=&prjIdx=237&step=1&interest1=">
+                    <img src="./img/contents02_01_03.png" alt="">
+
+                    <div class="cnts_02_text">
+                    <span class="ctgry_con1 ctgry_con2">기타</span><br>
+                    <p class="cnts_name cnts_names">2022년 예술거래 아이디어 공모전  &lt;상상, 가능한 거래&gt;</p>
+                    <p class="date dates">2022-10-21 ~ <br>
+                        2022-11-04<br>
+                        예술청팀 <br></p>
+                    </div>    
+                    </a>
+                </div>
+                <!-- cnts02_01 end! -->
+
+            
+            
+                <div class="pc_cnts02 pc_con2_04">
+                    <a href="https://www.sfac.or.kr/participation/participation/
+                    artspace_project.do?pageIndex=2&firstPageIndex=1&lastPageIndex=&searchSpceCode=&searchSttusCd=&prjIdx=233&step=1&interest1=">
+                    <img src="./img/contents02_01_04.png" alt="">
+
+                    <div class="cnts_02_text">
+                    <span class="ctgry_con1 ctgry_con2">연극 무용</span><br>
+                    <p class="cnts_name cnts_names">[추가모집]2022년 예술청 아카데미 
+                        &lt;문화예술안전망학교-발화하는 예술&gt;아카데미 참여자 모집</p>
+                    <p class="date dates">2022-06-20 ~<br>
+                        2022-08-03<br>
+                        예술청팀 <br></p>
+                    </div>    
+                    </a>
+                </div>
+                <!-- cnts02_01 end! -->
+            </div>
+            <!-- pc_con2_123456box -->
+
+            <div class="pc_con2_123456box">
+                <div class="pc_cnts02 pc_con2_05">
+                    <a href="https://www.sfac.or.kr/participation/
+                    participation/artspace_project.do?pageIndex=4&firstPageIndex=1&lastPageIndex=&searchSpceCode=&searchSttusCd=&prjIdx=216&step=1&interest1=">
+                    <img src="./img/contents02_01_05.png" alt="">
+
+                    <div class="cnts_02_text">
+                    <span class="ctgry_con1 ctgry_con2">연극 음악</span><br>
+                    <p class="cnts_name cnts_names">2022 생활권 소극장 활성화 지원 
+                        &lt;극장동네, 동네극장&gt;</p>
+                    <p class="date dates">2022-05-01 ~ <br>
+                        2022-11-30<br>
+                         지역문화팀 <br></p>
+                    </div>    
+                    </a>
+                  
+                </div>
+                <!-- cnts02_01 end! -->
+                <div class="pc_cnts02 pc_con2_06">
+                    <a href="https://www.sfac.or.kr/participation/
+                    participation/artspace_project.do?pageIndex=2&firstPageIndex=1&lastPageIndex=&searchSpceCode=&searchSttusCd=&prjIdx=230&step=1&interest1=">
+                    <img src="./img/contents02_01_06.png" alt="">
+
+                    <div class="cnts_02_text">
+                    <span class="ctgry_con1 ctgry_con2">연극 무용</span><br>
+                    <p class="cnts_name cnts_names">2022 공성장형 예술실험지원 &lt;링크(LINK)&gt; 
+                        참여예술가 모집
+                    </p>
+                    <p class="date dates">2022-07-07 ~ <br>
+                        2022-11-30<br>
+                        서교예술실험센터 <br></p>
+                    </div>    
+                    </a>
+                </div>
+                <!-- cnts02_01 end! -->
+            </div>
+            <!-- pc_con2_123456box -->
+            </div>
+
+            <div class="con2_btn_box">
+            <a href="https://www.sfac.or.kr/participation/
+            participation/artspace_project.do">
+            <input class="con2_more" type="button" value="지원사업 더보기 ✚">
+            </a>
+            </div>
+
+        </div>
+        <!-- con2 end! -->
+
+
+        <div class="contents_03 con3 con">
+            <div class="notice_name_box">
+                <div class="notice_name_boxing">
+                    <span class="notice_name">&nbsp;공지사항</span>
+                    <span class="notice_name">&nbsp; 공모안내 </span>
+                </div>   
+                <div class="notice_name_boxing">
+                    <span class="notice_name">자치구소식</span>
+                    <span class="notice_name">보도자료</span>
+                </div>     
+            </div>
+            <!--  -->
+
+            <div class="tablet_notice_name_box">
+                <div class="tablet_notice_name_boxing">
+                    <span class="tablet_notice_name">공지사항</span>
+                    <span class="tablet_notice_name">공모안내</span>
+                    <span class="tablet_notice_name">자치구소식</span>
+                    <span class="tablet_notice_name">보도자료</span>
+                </div>     
+            </div>
+            <!--  -->
+
+            <div class="notice_tmi_box">
+            <ul>
+                <li>
+                    <a href="https://www.sfac.or.kr/opensquare/notice/
+                    support_list.do?cbIdx=992&bcIdx=133735&type=">
+                    <div class="con3_location">신당창작아케이드</div>
+                    <div class="con3_date">2022.12.07</div>
+                    <br>
+                    <p>[결과발표] 2023년 신당창작아케이드 제14기 입주작가 정기공모 1차심의 결과 안내</p>
+                    </a>
+                </li>
+                <!-- li_공지사항1번 -->
+
+                <li>
+                    <a href="https://www.sfac.or.kr/opensquare/notice/
+                    support_list.do?cbIdx=992&bcIdx=133696&type=">
+                    <div class="con3_location">예술지원팀</div>
+                    <div class="con3_date">2022.11.29</div>
+                    <br>
+                    <p>[공모] 2023 원로예술지원 공모 안내</p>
+                    </a>
+                </li>
+                <!-- li_공지사항2번 -->
+
+                <li>
+                    <a href="https://www.sfac.or.kr/opensquare/notice/
+                    support_list.do?cbIdx=992&bcIdx=133415&type=">
+                    <div class="con3_location">예술지원정책팀</div>
+                    <div class="con3_date">2022.09.30</div>
+                    <br>
+                    <p>2023 서울문화재단 예술지원 통합공모 1차</p>
+                    </a>
+                </li>
+                <!-- li_공지사항3번 -->
+
+                <li>
+                    <a href="https://www.sfac.or.kr/opensquare/notice/
+                    support_list.do?cbIdx=992&bcIdx=133288&type=">
+                    <div class="con3_location">삼일로창고극장</div>
+                    <div class="con3_date">2022.08.31</div>
+                    <br>
+                    <p>2022 삼일로창고극장 기획사업 &lt;창고개방&gt; [리서치 프로젝트 : 극장활용법] 공모</p>
+                    </a>    
+                </li>
+                <!-- li_공지사항4번 -->
+            </ul>
+        </div>
+            <!-- 공지사항 목록 끝 -->
+
+            <div class="con3_plus_btn">
+                <a href="https://www.sfac.or.kr/opensquare/notice/
+                support_list.do?cbIdx=992&type=">
+                <img class="tt" src="./img/plus_btn.png" alt="">
+                </a>
+            </div>
+            <!-- 더보기 버튼 -->
+
+            <!-- pc공지사항 -->
+            <div class="pc_notice_box">
+                <div class="pc_notice_name pc_notice_inbox">
+                    <p><font> 공지사항 </font></p>
+                    <p><font> 공모안내 </font></p>
+                    <p><font> 자치구소식 </font></p>
+                    <p><font> 보도자료 </font></p>
+                </div>
+                
+                <div class="pc_notice_tmi_box pc_notice_inbox">
+                    <a href="https://www.sfac.or.kr/opensquare/notice
+                    /notice_list.do?cbIdx=955&bcIdx=133770&type=">
+                    <p class="notice_place_name">예술지원정책팀</p>
+                    <p class="notice_tmi_name">[모집] 2023년 서울문화재단 예술지원사업 
+                        정산보고서 검증기관(회계법인) 선정 공고</p>
+                    <p class="notice_date_name">2022.12.19  </p>  
+                    </a>  
+                </div>
+                <!-- PC 공지사항 1번 -->
+
+                <div class="pc_notice_tmi_box pc_notice_inbox">
+                    <a href="https://www.sfac.or.kr/artspace/artspace/
+                    artsedu_notice.do?cbIdx=1019&bcIdx=133762&type=">
+                    <p class="notice_place_name">용산예술교육센터 </p>
+                    <p class="notice_tmi_name">[전시안내] 2022 &lt;창작지원터&gt; 
+                        결과공유회 "18개 자아의 프리즘" 초대합니다.</p>
+                    <p class="notice_date_name">2022.12.16  </p>  
+                    </a>  
+                </div>
+                <!-- PC 공지사항 2번 -->
+
+                <div class="pc_notice_tmi_box pc_notice_inbox">
+                    <a href="https://www.sfac.or.kr/artspace/artspace/
+                    dance_notice.do?cbIdx=985&bcIdx=133760&type=">
+                    <p class="notice_place_name">서울무용센터 </p>
+                    <p class="notice_tmi_name">2023년 1월 서울무용센터 정기대관 승인결과 안내</p>
+                    <p class="notice_date_name">2022.12.15  </p>    
+                    </a>
+                </div>
+                <!-- PC 공지사항 3번 -->
+
+                <div class="pc_notice_tmi_box pc_notice_inbox">
+                    <a href="https://www.sfac.or.kr/artspace/artspace/
+                    jamsil_notice.do?cbIdx=991&bcIdx=133752&type=">
+                    <p class="notice_place_name">잠실창작스튜디오 </p>
+                    <p class="notice_tmi_name">2023 서울장애예술창작센터 13기 입주작가 공모 2차 인터뷰 안내</p>
+                    <p class="notice_date_name">2022.12.13  </p>  
+                    </a>  
+                </div>
+                <!-- PC 공지사항 4번 -->
+
+                <div class="pc_notice_tmi_box pc_notice_inbox">
+                    <a href="https://www.sfac.or.kr/artspace/artspace
+                    /streetArts_notice.do?cbIdx=984&bcIdx=133634&type=">
+                    <p class="notice_place_name">서울거리예술창작센터 </p>
+                    <p class="notice_tmi_name">2022 거리예술 주제워크숍 &lt;거리의 재발견&gt; 
+                        참여 예술가 선정 결과 안내</p>
+                    <p class="notice_date_name">2022.11.17  </p>    
+                    </a>
+                </div>
+                <!-- PC 공지사항 5번 -->
+
+                <div class="pc_notice_inbox pc_notice_inbox_end">
+                </div>
+                <!-- PC 공지사항 5번 -->
+
+                
+                    <img class="pc_con3_btn" src="./img/plus_btn.png" alt="">
+            <!-- 더보기 버튼 -->
+
+            </div>
+            <!-- pc공지사항 -->
+        </div>
+        <!-- con3 공지사항 끝! -->
+
+
+        <div class="contents_04 con4 con">
+    
+        <div class="name">온라인 문화
+            <p>온라인으로 즐기는 서울문화!</p>
+        </div>
+        <p class="sub_tittle">온라인으로 즐기는 서울문화!</p>
+
+        <div class="youtube_box">
+            <div class="youtube_main">
+                <iframe width="100%" height="186" src="https://www.youtube.com/embed/MsnY-iqSmSM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <div class="youtube_con_box">
+
+            <div class="youtue_con1 youtube_con">
+                <iframe width="100%" height="90" src="https://www.youtube.com/embed/5hnqMqcgJfE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                [서울 스테이지11] 차세대, 
+                ‘Colorful Sounds’ 하이라이트
+            </div>
+            <div class="youtue_con2 youtube_con">
+                <iframe width="100%" height="90" src="https://www.youtube.com/embed/C0ouVgixG0I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                [서울예술인희망캠페인] 
+                12월 공연/전시 소식 📢
+            </div>
+
+            </div>
+            <!-- youtube_con_box -->
+
+        </div>
+        <!-- youtube_box end! -->
+
+        <!-- PC버전 유튜브 -->
+        <div class="pc_youtube_box">
+            <div class="pc_youtube_main">
+                <iframe width="100%" height="470" src="https://www.youtube.com/embed/MsnY-iqSmSM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="pc_youtube_main_txt">
+                    <a href="https://www.youtube.com/@sfacmovie"><img src="./img/img_spotTV.png" alt="스팍"
+                    style="padding-top: 4%; padding-left: 5%; padding-bottom: 2%;"></a>
+                    <p><b style="font-size: 20px;">서울문화재단 공식 유튜브 채널 스팍TV는</b> </p>
+                    <p>서울시민의 문화, 예술을 통해 삶의 질을 높이고 서울의 도시경쟁력을 키우고자 태어났습니다. <br>
+                        합리적인 지원과 창의적인 문화 사업으로 서울의 미래를 열어 가겠습니다.</p>
+
+                </div>
+            </div>
+
+            <div class="pc_youtube_con_box">
+                <div class="pc_youtube_con_inbox">
+                    <a href="https://www.youtube.com/watch?v=0kRS32tempY">
+                        <img src="./img/youtube_01.png" alt="">
+                    <p>[서울예술인희망캠페인] <br> 11월 공연/전시 소식 📢
+                        <br>
+                        <button onclick=""https://www.youtube.com/watch?v=0kRS32tempY"">자세히 보기</button>
+                    </p>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=E_qWUvPJhxU">
+                        <img src="./img/youtube_02.png" alt="">
+                    </a>   
+                </div>
+
+                <div class="pc_youtube_con_inbox">
+                    <a href="https://www.youtube.com/watch?v=qhAFWxUhcrE">
+                        <img src="./img/youtube_3.png" alt="">
+                        </a>
+
+                    <a href="https://www.youtube.com/watch?v=5hnqMqcgJfE">
+                    <img src="./img/youtube_4.png" alt="">
+                    </a>
+                </div>
+
+                <div class="pc_youtube_con_inbox">
+                    <a href="https://www.youtube.com/watch?v=WQ3q8lObT0k">
+                    <img src="./img/youtube_5.png" alt="">
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=TFts8YRxa60">
+                    <img src="./img/youtube_6.png" alt="">
+                    </a>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        </div>
+        <!-- con4 온라인문화 끝! -->
+
+        <div class="contents_05 con5 con">
+            <div class="name_box">
+            <div class="name con5_name"><font># Web Magazine</font>
+                <p># Web Magazine</p>
+                <p>서울문화재단의 다양한 소식을 전합니다.</p>
+                </div>
+            <p class="sub_tittle">서울문화재단의 다양한 소식을 전합니다.</p>
+            </div>
+
+            <div class="con5_swiper_box">
+
+            <div class="swiper webjinSwiper">
+
+                <div class="swiper-wrapper">
+
+                <div class="webjin_slide swiper-slide">
+                    <a href="http://www.sfac.or.kr/magazine/#/html/index_main.asp">
+                        <img src="./img/webjin_01.png" alt="문화 플러스 서울">
+                    </a>
+                    <p>문화예술종합 월간지</p>
+                    <font color="#238363">
+                        문화 플러스 서울</font>
+                </div>
+                <!-- 웹진01_문화플러스 서울 끝!  -->
+
+                <div class="webjin_slide swiper-slide">
+                    <a href="http://www.sfac.or.kr/literature/#/index_main.asp">
+                        <img src="./img/webjin_02.png" alt="웹진 비유">
+                    </a>
+                    <p>문학 전문</p><font color="#6D6E70">웹진 비유</font>
+                </div>
+                <!-- 웹진02_웹진 비유 끝!  -->
+
+                <div class="webjin_slide swiper-slide">
+                    <a href="https://www.sfac.or.kr/theater/WZ020200/webzine_view.do?wtIdx=12930">
+                        <img src="./img/webjin_03.png" alt="웹진 연극in">
+                    </a>
+                    <p>연극 전문</p><font color="#CC4B00">웹진 연극in</font>
+                </div>
+                <!-- 웹진03_연극 전문 웹진 연극in 끝!  -->
+
+                <div class="webjin_slide swiper-slide">
+                    <a href="http://www.sfac.or.kr/dance/#/zoom/zoom_view.asp?type=IN&div=&zom_idx=828&page=1&field=&keyword=">
+                        <img src="./img/webjin_04.png" alt="춤:in">
+                    </a>
+                    <p>무용 전문 웹진</p><font color="#3500FF">춤:in</font>
+                </div>
+                <!-- 웹진04_무용 전문 웹진 춤:in 끝!  -->
+
+                </div>
+            </div>
+            <!--  -->
+            </div>
+
+            <!--con5 태블릿 이상 버전 -->
+            <div class="con5_tablet_swiper_box">
+            <div class="swiper tabletSwiper">
+
+                <div class="tablet_swiper-wrapper swiper-wrapper">
+
+                  <div class="tablet_slide swiper-slide">
+                    <div class="bg_box bg_box1">
+                        <a href="http://www.sfac.or.kr/magazine/#/html/index_main.asp">
+                        <img src="./img/webjin_01.png" />
+                        </a>    
+                        <p>문화예술종합 월간지
+                        <font color="#238363">
+                        문화 플러스 서울</font>
+                    </p>
+                    </div>
+                    <!-- bg_box -->
+                  </div>
+                  <!-- 태블릿버전 웹진 컨텐츠_01 끝! -->
+
+                  <div class="tablet_slide swiper-slide">
+                    <div class="bg_box bg_box2">
+                        <a href="http://www.sfac.or.kr/literature/#/index_main.asp">
+                        <img src="./img/webjin_02.png" />
+                        </a>    
+                    <p>문학 전문
+                        <font color="#6D6E70">웹진 비유</font>
+                    </p>
+                    </div>
+                    <!-- bg_box -->
+                  </div>
+                  <!-- 태블릿버전 웹진 컨텐츠_02 끝! -->
+
+                  <div class="tablet_slide swiper-slide">
+                    <div class="bg_box bg_box3">
+                        <a href="https://www.sfac.or.kr/theater/WZ020200/webzine_view.do?wtIdx=12930">
+                        <img src="./img/webjin_03.png" />
+                        </a>
+                        <p>연극 전문
+                        <font color="#CC4B00">웹진 연극in</font>
+                    </p>
+                    </div>
+                    <!-- bg_box -->
+                  </div>
+                  <!-- 태블릿버전 웹진 컨텐츠_03 끝! -->
+
+                  <div class="tablet_slide swiper-slide">
+                    <div class="bg_box bg_box4">
+                        <a href="http://www.sfac.or.kr/dance/#/zoom/zoom_view.asp?type=IN&div=&zom_idx=828&page=1&field=&keyword=">
+                        <img src="./img/webjin_04.png" />
+                        </a>    
+                        <p>무용 전문 웹진
+                        <font color="#3500FF">춤:in</font>
+                    </p>
+                    </div>
+                    <!-- bg_box -->
+                  </div>
+                  <!-- 태블릿버전 웹진 컨텐츠_04 끝! -->
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <!-- swiper tabletSwiper -->
+        </div>
+        <!-- con5_tablet_swiper_box -->
+
+        </div>
+        <!-- con5 웹진 끝! -->
+
+        <div class="contents_06 con6 con">
+            <div class="name">뉴아트마켓거래소
+                <p>자발적 참여로 이루어지는 온/오프라인 예술 거래장터</p>
+            </div>
+            <p class="sub_tittle">자발적 참여로 이루어지는 온/오프라인 예술 거래장터</p>
+            
+            <section class="art_deals">
+
+            <div class="art_deal_boxing">  
+                <div class="art_deal_box">
+                <div class="art_deal_name">
+                    <p>나눔</p>
+                    <p>&nbsp;진행중&nbsp;</p>
+                </div>
+ 
+                <a href="https://www.scas.kr/community/newartmarket/50?curPage=1">
+                <div class="art_deal_cnts_box">
+                    <div class="art_deal_img"><img src="./img/new_art_01.png" alt=""></div>
+                    <div class="art_deal_text">
+                        <p>예술가가 자신의 자리를 
+                            찾아가는 삶의 과정에..</p>
+                        <p><font color="#666666">등록자 </font> 공형진</p>
+                        <p><font color="#666666">조회수 </font> 1,111</p>
+                        <p><font color="#666666">댓글 </font> 1</p>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <!-- art_deal_box 1번 끝! -->
+
+            <div class="art_deal_box">
+                <div class="art_deal_name">
+                    <p>나눔</p>
+                    <p>&nbsp;진행중&nbsp;</p>
+                </div>
+
+                <a href="https://www.scas.kr/community/newartmarket/49?curPage=1">
+                <div class="art_deal_cnts_box">
+                    <div class="art_deal_img"><img src="./img/new_art_02.png" alt=""></div>
+                    <div class="art_deal_text">
+                        <p>자신의 작품을 영어로 
+                            해외에 소개해보는 ..
+                            </p>
+                        <p><font color="#666666">등록자 </font> michael</p>
+                        <p><font color="#666666">조회수 </font> 1,111</p>
+                        <p><font color="#666666">댓글 </font> 1</p>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <!-- art_deal_box 2번 끝! -->
+
+            <div class="art_deal_box art_deal_box_margin deal_exchange_box">
+                <div class="art_deal_name">
+                    <p>교환</p>
+                    <p>&nbsp;진행중&nbsp;</p>
+                </div>
+
+                <a href="https://www.scas.kr/community/newartmarket/48?curPage=1">
+                <div class="art_deal_cnts_box">
+                    <div class="art_deal_img"><img src="./img/new_art_03.png" alt=""></div>
+                    <div class="art_deal_text">
+                        <p>반전.평화 퍼포먼스와 관련한 스터디모임을 해보고 싶습니다 ㅎ</p>
+                        <p><font color="#666666">등록자 </font> michael</p>
+                        <p><font color="#666666">조회수 </font> 719</p>
+                        <p><font color="#666666">댓글 </font> 1</p>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <!-- art_deal_box 3번 끝! -->
+ 
+            <div class="art_deal_box art_deal_box_table deal_exchange_box">
+                <div class="art_deal_name">
+                    <p>교환</p>
+                    <p>&nbsp;진행중&nbsp;</p>
+                </div>
+
+                <a href="https://www.scas.kr/community/newartmarket/47?curPage=1">
+                <div class="art_deal_cnts_box deal_exchange_box">
+                    <div class="art_deal_img"><img src="./img/new_art_04.png" alt=""></div>
+                    <div class="art_deal_text">
+                        <p>세계의 흔적 TOUCH, 현금과 교환합니다</p>
+                        <p><font color="#666666">등록자 </font> 라인석</p>
+                        <p><font color="#666666">조회수 </font> 1,111</p>
+                        <p><font color="#666666">댓글 </font> 1</p>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <!-- art_deal_box 4번 끝! *태블릿 버전부터 보이게 하기 -->
+
+            <div class="art_deal_box art_deal_box_table_pc deal_exchange_box">
+                <div class="art_deal_name">
+                    <p>교환</p>
+                    <p>&nbsp;진행중&nbsp;</p>
+                </div>
+                
+                <a href="https://www.scas.kr/community/newartmarket/44?curPage=2">
+                <div class="art_deal_cnts_box deal_exchange_box">
+                    <div class="art_deal_img"><img src="./img/new_art_05.png" alt=""></div>
+                    <div class="art_deal_text">
+                        <p>창작과정과 연기훈련의 지혜를 나눕니다.</p>
+                        <p><font color="#666666">등록자 </font> 임형택</p>
+                        <p><font color="#666666">조회수 </font>  1,918</p>
+                        <p><font color="#666666">댓글 </font> 1</p>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <!-- art_deal_box 5번 끝! *태블릿 버전부터 보이게 하기 -->
+
+            <div class="art_deal_box art_deal_box_table_pc art_deal_box_margin deal_close_box">
+                <div class="art_deal_name">
+                    <p>공지</p>
+                    <p>&nbsp;진행완료&nbsp;</p>
+                </div>
+
+                <a href="https://www.scas.kr/community/newartmarket/43?curPage=2">
+                <div class="art_deal_cnts_box">
+                    <div class="art_deal_img"><img src="./img/new_art_06.png" alt=""></div>
+                    <div class="art_deal_text">
+                        <p>[공지사항] 뉴 아트마켓 예술거래소 공지사항 및 이용안내</p>
+                        <p><font color="#666666">등록자 </font> 예술청 관리자</p>
+                        <p><font color="#666666">조회수 </font>  1,729</p>
+                        <p><font color="#666666">댓글 </font> 1</p>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <!-- art_deal_box 6번 끝! *태블릿 버전부터 보이게 하기 -->
+        </div>
+        <!-- art_deal_boxing end! -->
+
+        </section>
+        <!-- 아트거래소 큰박스 끝 -->
+        </div>
+        <!-- con6 뉴아트 거래소 끝! -->
+
+        <div class="contents_07 con7 con">
+            <div class="con7_name_box">
+                <div class="con7_name_boxing">
+                    <small>아카이브</small><br>
+                    <span style="font-size: 20px;"><b>온라인 갤러리</b></span>
+                    <p class="tmi">서울문화재단의 여러가지 활동을 담은 <br> 
+                        온라인 갤러리의 다양한 행사와 활동을 만나보세요.
+                    </p>
+
+                    <input class="con7_more_btn" type="button" value="&nbsp; 자세히보기 &nbsp;"
+                    onClick="location.href='https://www.sfac.or.kr/archive/main.do'">
+                    
+                </div>
+
+            </div>
+        </div>
+        <!-- con7 아카이브 온라인 갤러리 끝! -->
+
+        <!-- 다봄사이트 추출-->
+        <!-- 온라인 갤러리 -->
+        <div class="section4-wrap">
+            <div class="section4 cr">
+                <div class="title-section4">
+                    <div class="con7_name_box">
+                        <div class="con7_name_boxing">
+                            <small>아카이브</small><br>
+                            <span style="font-size: 20px;"><b>온라인 갤러리</b></span>
+                            <p class="tmi">서울문화재단의 여러가지 활동을 담은 <br> 
+                                온라인 갤러리의 다양한 행사와 활동을 만나보세요.
+                            </p>
+        
+                            <input class="con7_more_btn" type="button" value="&nbsp; 자세히보기 &nbsp;"
+                            onClick="location.href='https://www.sfac.or.kr/archive/main.do'">
+                            
+                        </div>
+                    <!-- <span class="h3-sup"><a href="/vlArtstsOnlinePrvateExbiExp2_user/mainList.nm">온라인 미술관</a></span>
+                    <span class="h3-tit">온라인 갤러리</span>
+                    <span class="h3-comment">시민 누구나 예술가가 되는 다봄 온라인 갤러리<br>
+                        시민 예술가의 개성있는 작품을 만나보세요.</span>
+                    <a class="btn mt" href="/ctznGlry/list.nm" title="자세히보기 버튼">자세히보기</a> -->
+                </div>
+            </div>
+        </div>
+        <!-- //온라인 갤러리 -->
+        <!-- 다봄사이트 추출 -->
+    </div>
+
+    <footer class="footer">
+        <div class="ft_top">
+            <p class="ft_top_text_012">개인정보처리방침</p>
+            <p class="ft_top_text_012">이메일무단수집거부</p>
+            <p class="ft_top_text_034">찾아오시는길</p>
+            <p class="ft_top_text_034">직원찾기</p>
+        </div>
+        <div class="ft_box">
+            <div class="ft_box1">
+                <a class="sns_icon" href="https://www.facebook.com/sfac2004">
+                    <img class="mobile_ft_sns" src="./img/sns_face.png" alt="페이스북">
+                    <img class="tablet_ft_sns" src="./img/pc_sns_face.png" alt="태블릿sns_페이스북">
+                </a>
+
+                <a class="sns_icon" href="https://blog.naver.com/i_sfac">
+                    <img class="mobile_ft_sns" src="./img/sns_post.png" alt="네이버포스트">
+                    <img class="tablet_ft_sns" src="./img/pc_sns_post.png" alt="태블릿sns_네이버포스트">
+                </a>
+
+                <a class="sns_icon" href="https://www.instagram.com/sfac2004/">
+                    <img class="mobile_ft_sns" src="./img/sns_instagram.png" alt="인스타그램">
+                    <img class="tablet_ft_sns" src="./img/pc_sns_instagram.png" alt="태블릿sns_인스타그램">
+                </a>
+                
+                <a href="#" class="top">
+                    <img src="./img/angle-up-solid.png" alt="">
+                    <br>TOP</a>
+            </div>
+            <!-- ft_box1 end! -->
+
+                <!-- 패밀리사이트 만들기 -->
+                <!-- 뉴스레터신청하기 만들기 -->
+                <img class="ft_logo" src="./img/main_logo_ss.png" alt="푸터로고"><br>
+            <ul class="ft_btm_box">
+                <li class="ft_btm_text">서울문화재단 | 사업자등록번호 : 201-82-04361</li>
+                <li class="ft_btm_text">대표전화 : 02 - 3290 -7000</li>
+                <li class="ft_btm_text">주소 : (우) 02589 서울특별시 동대문구 청계천로517</li>
+                <li class="ft_btm_text copy">COPYRIGHTⓒ 2018 SFAC. ALL RIGHT RESERVED.</li>
+            </ul>
+        </div>
+    </footer> <!-- 푸터 끝! -->
+
+    <!-- pc.ver footer -->
+    <footer class="pc_footer">
+        <div class="pc_footer_bg">
+            <div class="pc_footer_box">
+                <div class="pc_footer_top">
+                    <div class="pc_footer_top_logo_box">
+                        <img src="./img/btm_logos.png" alt="로고">
+                    </div>
+                    <!-- pc_footer_top_logo_box -->
+                    <div class="pc_footer_top_job_box">
+                        <ul>
+                            <li class="news_letter">뉴스레터 신청하기</li>
+                            <li><img src="./img/pc_sns_face.png" alt="페이스북"></li>
+                            <li><img src="./img/pc_sns_instagram.png" alt="인스타그램"></li>
+                            <li><img src="./img/pc_sns_post.png" alt="네이버_포스트"></li>
+                            <li class="p_site">패밀리 사이트 ▴ </li>
+                        </ul>
+                    </div>
+                    <!-- pc_footer_top_job_box -->
+                </div>
+                <!-- pc_footer_top -->
+                <div class="pc_footer_btm">
+                    <div class="pc_footer_btm_p_box">
+                        <div class="ft_ul_top">
+                            <ul>
+                                <li> 개인정보처리방침</li>
+                                <li> &nbsp;이메일무단수집거부</li>
+                                <li> &nbsp;시민서비스 헌장</li>
+                                <li> &nbsp;찾아오시는길 </li>
+                                <li> &nbsp;직원찾기</li>
+                                <li> &nbsp;부조리통합신고</li>
+                                <li> &nbsp;인권침해구제안내</li>
+                            </ul>
+                        </div>
+                        <!-- ft_ul_top -->
+                        <p>서울문화재단 | 사업자 등록번호 : 201-82-04361 | 
+                            대표전화 : 02-3290-7000</p>
+                        <p>주소 : (우) 02589 서울특별시 동대문구 
+                            청계천로 517</p> 
+                        <p>COPYRIGHTⓒ 2018 SFAC. ALL RIGHTS RESERVED.</p>       
+                    </div>
+                    <!-- pc_footer_btm_p_box -->
+                    <div class="pc_footer_btm_logo_box">
+                        <div class="btm_logo_box_Sort_box">
+                            <img src="./img/pc_ft_btm_logo_01.png" alt="로고1">
+                            <img src="./img/pc_ft_btm_logo_02.png" alt="로고2">
+                            <img src="./img/pc_ft_btm_logo_03.png" alt="로고3">
+                        </div>
+                        <div class="btm_logo_box_Sort_box">
+                            <img src="./img/pc_ft_btm_logo_04.png" alt="로고4">
+                            <img src="./img/pc_ft_btm_logo_05.png" alt="로고5">
+                        </div>
+                    </div>
+                    <!-- pc_footer_btm_logo_box -->
+
+                </div>
+                <!-- pc_footer_btm -->
+
+            </div>
+            <!-- pc_footer_box -->
+        </div>
+        <!-- pc_footer_bg end! -->
+
+        <div class="pc_top">
+        <a href="#" class="op">
+        <img src="./img/angle-up-solid.png" alt="">
+        <p>TOP</p></a></div>
+
+    </footer>
+    <!-- pc_footer end! -->
+
+    <!-- pc.ver footer end!-->
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+     <!--비주얼메인 Initialize Swiper -->
+     <script>
+
+          var swiper = new Swiper(".visualSwiper", {
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+      </script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        freeMode: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
+
+    <!--웹진 Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".webjinSwiper", {
+        effect: "cards",
+        grabCursor: true,
+      });
+    </script>
+
+
+     <!-- 웹진 태블릿 Initialize Swiper -->
+     <script>
+        var swiper = new Swiper(".tabletSwiper", {
+          effect: "coverflow",
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: "auto",
+          coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+          },
+        });
+      </script>
+    
+      
+    <!-- PC버전 비주얼 메인 Initialize Swiper -->
+    <!-- <script>
+        var swiper = new Swiper(".pc_visualSwiper", {
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            renderBullet: function (index, className) {
+              return '<span class="' + className + '">' + (index + 1) + "</span>";
+            },
+          },
+        });
+    </script> -->
+
+
+    
+
+
+    
+</body>
+</html>
